@@ -1,17 +1,24 @@
 @import "tailwindcss";
 
+/* ============================= */
+/* ROOT VARIABLES */
+/* ============================= */
 :root {
   --background: #ffffff;
   --foreground: #171717;
 }
 
+/* ============================= */
+/* TAILWIND THEME TOKENS */
+/* ============================= */
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
 }
 
+/* ============================= */
+/* DARK MODE */
+/* ============================= */
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
@@ -19,16 +26,35 @@
   }
 }
 
+/* ============================= */
+/* GLOBAL STYLES */
+/* ============================= */
+
+/* ✅ Apply Inter (body font from Next.js) */
 body {
-  background: var(--background);
+  font-family: var(--font-body);
+  background-color: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
 }
 
-html,
-body {
-  background-color: #ffffff;
+/* ✅ Apply Cormorant (heading font) */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
 }
+
+/* Optional smooth rendering */
+html {
+  scroll-behavior: smooth;
+}
+
+/* ============================= */
+/* ANIMATIONS */
+/* ============================= */
 @keyframes fade-up {
   from {
     opacity: 0;
@@ -42,4 +68,8 @@ body {
 
 .animate-fade-up {
   animation: fade-up 0.8s ease-out forwards;
+}
+
+.card-cursor {
+  cursor: none;
 }
