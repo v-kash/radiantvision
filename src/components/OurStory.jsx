@@ -1,0 +1,136 @@
+"use client";
+
+import { motion } from "framer-motion";
+
+export default function OurStory() {
+  return (
+    <section className="py-16 px-[8%] bg-[#f8f4ef]">
+      <div className="grid md:grid-cols-2 gap-12 items-center">
+
+        {/* LEFT — text */}
+        <div>
+
+          {/* TAG */}
+          <motion.p
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            viewport={{ once: true }}
+            className="text-xs tracking-[0.25em] uppercase text-[#5a7a4a] mb-4"
+          >
+            Our Story
+          </motion.p>
+
+          {/* HEADING */}
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            viewport={{ once: true }}
+            className="text-2xl md:text-3xl font-heading text-[#1a1a1a] leading-snug mb-6"
+          >
+            Every building relies on systems
+            that are rarely seen — but{" "}
+            <span className="text-[#5a7a4a]">critically important.</span>
+          </motion.h2>
+
+          {/* BODY PARAGRAPHS */}
+          {[
+            "We started with a simple belief: engineering should not just meet standards, it should elevate how buildings perform.",
+            "From early-stage design to final execution, we focus on creating MEPFP systems that are not only efficient but also practical, coordinated, and future-ready.",
+            "Over time, we have worked across a wide range of projects, continuously refining our process to deliver better accuracy, smoother coordination, and stronger outcomes for our clients.",
+          ].map((para, i) => (
+            <motion.p
+              key={i}
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.55, delay: 0.15 + i * 0.08 }}
+              viewport={{ once: true }}
+              className="text-[#666] text-sm leading-relaxed mb-3 last:mb-0"
+            >
+              {para}
+            </motion.p>
+          ))}
+
+          {/* DIVIDER */}
+          <motion.div
+            initial={{ scaleX: 0 }}
+            whileInView={{ scaleX: 1 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            viewport={{ once: true }}
+            className="mt-8 mb-5 h-[1px] bg-[#d6d2cc] origin-left"
+          />
+
+          {/* FOUNDER SIGNATURE */}
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.45 }}
+            viewport={{ once: true }}
+            className="flex items-center gap-3"
+          >
+            <div className="w-9 h-9 rounded-full bg-[#dde8d5] border border-[#c8d5b9] flex items-center justify-center text-[#5a7a4a] text-xs font-heading font-semibold shrink-0">
+              KS
+            </div>
+            <div>
+              <p
+                className="text-[#1a1a1a] leading-none mb-0.5"
+                style={{
+                  fontFamily: "Georgia, serif",
+                  fontSize: "18px",
+                  fontStyle: "italic",
+                }}
+              >
+                Keyur Shah
+              </p>
+              <p className="text-[10px] tracking-[0.15em] uppercase text-[#999]">
+                Founder & Lead Engineer
+              </p>
+            </div>
+          </motion.div>
+
+        </div>
+
+        {/* RIGHT — image */}
+        <motion.div
+          initial={{ opacity: 0, x: 30 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.7, delay: 0.1 }}
+          viewport={{ once: true }}
+          className="relative"
+        >
+
+          {/* MAIN IMAGE — reduced height */}
+          <div className="relative rounded-2xl overflow-hidden aspect-[3/4] w-full max-h-[420px]">
+            <div
+              className="absolute inset-0 bg-cover bg-center"
+              style={{ backgroundImage: "url('/about-story.jpg')" }}
+            />
+          </div>
+
+          {/* FLOATING STAT CARD */}
+          <motion.div
+            initial={{ opacity: 0, y: 16, scale: 0.95 }}
+            whileInView={{ opacity: 1, y: 0, scale: 1 }}
+            transition={{ duration: 0.55, delay: 0.35 }}
+            viewport={{ once: true }}
+            className="absolute -bottom-4 -left-4 rounded-xl px-5 py-4 shadow-lg"
+            style={{
+              background: "#1a1f16",
+              border: "1px solid rgba(255,255,255,0.06)",
+            }}
+          >
+            <p className="text-xl font-heading text-white mb-0.5">50+</p>
+            <p className="text-[10px] tracking-[0.15em] uppercase text-white/45">
+              Projects Delivered
+            </p>
+          </motion.div>
+
+         
+
+        </motion.div>
+
+      </div>
+    </section>
+  );
+}
