@@ -32,23 +32,42 @@ const services = [
 
 export default function ServicesGrid() {
   return (
-    <section className="py-24 px-[8%] bg-white">
-
+    <section className="py-24 px-[8%] bg-[#f8f4ef]">
       <div className="max-w-7xl mx-auto">
 
         {/* HEADING */}
         <div className="text-center mb-16">
-          <h2 className="font-heading text-4xl md:text-5xl text-[#1f2a1f] mb-4">
+          <motion.p
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            viewport={{ once: true }}
+            className="text-xs tracking-[0.25em] uppercase text-[#5a7a4a] mb-4"
+          >
+            What We Do
+          </motion.p>
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            viewport={{ once: true }}
+            className="font-heading text-3xl md:text-5xl text-[#1a1a1a] mb-4"
+          >
             Our Services
-          </h2>
-          <p className="font-body text-[#5a6a5a] max-w-2xl mx-auto">
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, y: 14 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.55, delay: 0.15 }}
+            viewport={{ once: true }}
+            className="text-[#777] text-base max-w-xl mx-auto leading-relaxed"
+          >
             Comprehensive MEP and BIM solutions tailored for modern construction.
-          </p>
+          </motion.p>
         </div>
 
-        {/* GRID */}
-        <div className="grid sm:grid-cols-2 md:grid-cols-5 gap-6">
-
+        {/* 5-COL GRID */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-4">
           {services.map((service, i) => (
             <motion.div
               key={i}
@@ -56,46 +75,68 @@ export default function ServicesGrid() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: i * 0.08, duration: 0.5 }}
               viewport={{ once: true }}
-              className="group relative aspect-square overflow-hidden  border border-[#e5ece5] cursor-pointer"
+              className="group relative aspect-square overflow-hidden rounded-[2px] cursor-pointer border border-[#e0dbd4]"
             >
 
-              {/* DEFAULT CONTENT */}
-              <div className="absolute inset-0 flex flex-col items-center justify-center text-center p-6 bg-[#f7faf7] transition duration-300 group-hover:opacity-0">
-                <h3 className="font-heading text-xl text-[#1f2a1f] mb-3">
-                  {service.title}
-                </h3>
-                <p className="font-body text-sm text-[#5a6a5a]">
-                  {service.desc}
-                </p>
+              {/* DEFAULT STATE — cream bg */}
+              <div className="absolute inset-0 bg-[#f0ece5] flex flex-col justify-between p-6 transition-opacity duration-500 group-hover:opacity-0">
+
+                {/* Number */}
+                <span className="text-xs font-medium tracking-[0.2em] text-[#5a7a4a]/50 tabular-nums">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+
+                {/* Title + desc at bottom */}
+                <div>
+                  {/* Accent line */}
+                  <div className="w-6 h-[2px] bg-[#5a7a4a] mb-4" />
+                  <h3 className="font-heading text-base text-[#1a1a1a] leading-snug mb-2">
+                    {service.title}
+                  </h3>
+                  <p className="text-xs text-[#888] leading-relaxed">
+                    {service.desc}
+                  </p>
+                </div>
+
               </div>
 
-              {/* IMAGE SLIDE FROM TOP */}
+              {/* IMAGE — slides up from bottom on hover */}
               <div
-                className="absolute inset-0 bg-cover bg-center translate-y-[-100%] group-hover:translate-y-0 transition duration-500 ease-[cubic-bezier(0.77,0,0.175,1)]"
+                className="absolute inset-0 bg-cover bg-center translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-[cubic-bezier(0.77,0,0.175,1)]"
                 style={{ backgroundImage: `url(${service.img})` }}
               />
 
-              {/* OVERLAY */}
-              <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition duration-500" />
+              {/* DARK OVERLAY on image */}
+              <div className="absolute inset-0 bg-black/55 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
               {/* HOVER CONTENT */}
-              <div className="absolute inset-0 flex flex-col items-center justify-center text-center p-6 opacity-0 group-hover:opacity-100 transition duration-500 z-10">
-                <h3 className="font-heading text-xl text-white mb-3">
-                  {service.title}
-                </h3>
-                <p className="font-body text-sm text-white/80 mb-4">
-                  {service.desc}
-                </p>
+              <div className="absolute inset-0 flex flex-col justify-between p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10">
 
-                <span className="text-white text-sm tracking-wide">
-                  Explore →
+                {/* Number */}
+                <span className="text-xs font-medium tracking-[0.2em] text-white/40 tabular-nums">
+                  {String(i + 1).padStart(2, "0")}
                 </span>
+
+                <div>
+                  {/* Green accent line */}
+                  <div className="w-6 h-[2px] bg-[#c8d5b9] mb-4" />
+                  <h3 className="font-heading text-base text-white leading-snug mb-2">
+                    {service.title}
+                  </h3>
+                  <p className="text-xs text-white/65 leading-relaxed mb-4">
+                    {service.desc}
+                  </p>
+                  <span className="text-[11px] tracking-[0.15em] uppercase text-[#c8d5b9]">
+                    Explore →
+                  </span>
+                </div>
+
               </div>
 
             </motion.div>
           ))}
-
         </div>
+
       </div>
     </section>
   );

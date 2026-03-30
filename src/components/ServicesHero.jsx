@@ -50,7 +50,7 @@ export default function ServicesHero() {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.4, duration: 0.8 }}
-          className="px-8 py-3 bg-[#5a7a4a] text-white font-body text-sm tracking-wide rounded-full hover:bg-[#4a6a3a] transition"
+          className="px-8 py-3 bg-[#5a7a4a] text-white font-body text-sm tracking-wide rounded-[2px] hover:bg-[#4a6a3a] transition"
         >
           Request a Consultation
         </motion.button>
