@@ -48,9 +48,9 @@ h6 {
 }
 
 /* Optional smooth rendering */
-html {
+/* html {
   scroll-behavior: smooth;
-}
+} */
 
 /* ============================= */
 /* ANIMATIONS */

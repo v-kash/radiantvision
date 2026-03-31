@@ -199,21 +199,18 @@ export default function IndustriesSlider() {
     <section
       id="industries"
       ref={containerRef}
-      className="relative bg-gradient-to-b from-white via-gray-50 to-white text-black py-24 overflow-hidden"
-    >
+className="relative bg-[#f8f4ef] text-black py-16 overflow-hidden"    >
       {/* Ambient Background */}
-      <div className="absolute top-0 right-1/4 w-[500px] h-[500px] bg-blue-400/8 rounded-full blur-3xl" />
-      <div className="absolute bottom-1/4 left-1/3 w-[500px] h-[500px] bg-purple-400/8 rounded-full blur-3xl" />
 
       <div className="relative z-10 mx-auto max-w-7xl px-6">
         {/* Header */}
         <div className="max-w-3xl mx-auto text-center mb-12">
           <div className="inline-flex items-center gap-2 mb-4 industry-label-wrap">
-            <div className="h-px w-8 bg-black/20" />
-            <span className="industry-label text-xs uppercase tracking-[0.2em] text-black/50 font-medium">
+            <div className="h-px w-8 bg-[#5a7a4a]/20" />
+            <span className="industry-label text-xs uppercase tracking-[0.2em] text-[#6b705c] font-medium">
               Industries We Serve
             </span>
-            <div className="h-px w-8 bg-black/20" />
+            <div className="h-px w-8 bg-[#5a7a4a]/20" />
           </div>
 
           <h2 className="industry-title text-4xl md:text-5xl lg:text-6xl font-light leading-[1.1] text-black tracking-tight mb-6">
@@ -222,7 +219,7 @@ export default function IndustriesSlider() {
             <span className="font-medium">diverse sectors</span>
           </h2>
 
-          <p className="industry-intro text-lg text-black/60 leading-relaxed max-w-2xl mx-auto">
+          <p className="industry-intro text-lg text-[#7a7a7a] leading-relaxed max-w-2xl mx-auto">
             We partner with developers, consultants, and contractors across
             diverse sectors to deliver reliable and scalable MEP and BIM
             solutions.
@@ -244,7 +241,7 @@ export default function IndustriesSlider() {
                     zIndex: index === currentIndex ? 10 : 1,
                   }}
                 >
-                  <div className="group relative bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-500 h-full">
+                  <div  className="group relative bg-white border border-[#e0dbd4] rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-500 h-full">
                     <div className="grid md:grid-cols-2 h-full">
                       {/* Image Side - Diagonal Clip - ALWAYS ON LEFT */}
                       <div
@@ -263,11 +260,11 @@ export default function IndustriesSlider() {
                         </div>
 
                         {/* Gradient Overlay - ALWAYS LEFT TO RIGHT */}
-                        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-black/30 to-black/60 group-hover:via-black/50 transition-all duration-500" />
+                        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#1a1f16]/20 to-[#1a1f16]/40 group-hover:via-black/50 transition-all duration-500" />
 
                         {/* Number Overlay - ALWAYS ON RIGHT */}
                         <div className="absolute right-8 top-8">
-                          <div className="text-8xl md:text-9xl font-light leading-none text-white/20 group-hover:text-white/30 transition-colors duration-500">
+                          <div className="text-8xl md:text-9xl font-light leading-none text-[#1a1f16]/15 group-hover:text-[#1a1f16]/25 transition-colors duration-500">
                             0{industry.id}
                           </div>
                         </div>
@@ -288,15 +285,15 @@ export default function IndustriesSlider() {
                           </h4>
 
                           {/* Divider Line - ALWAYS BLUE */}
-                          <div className="h-px w-16 bg-black/20 mb-6 group-hover:w-32 transition-all duration-700 group-hover:bg-blue-500" />
+                          <div className="h-px w-16 bg-[#5a7a4a]/20 mb-6 group-hover:w-32 transition-all duration-700 group-hover:bg-[#5a7a4a] group-hover:shadow-[0_0_8px_rgba(90,122,74,0.3)]" />
 
                           {/* Description */}
-                          <p className="text-lg text-black/60 leading-relaxed mb-8">
+                          <p className="text-lg text-[#7a7a7a] leading-relaxed mb-8">
                             {industry.description}
                           </p>
 
                           {/* Learn More Link */}
-                          <div className="flex items-center gap-2 text-black/50 group-hover:text-black transition-colors duration-300">
+                          <div className="flex items-center gap-2 text-[#6b705c] group-hover:text-black transition-colors duration-300">
                             <span className="text-sm font-medium uppercase tracking-wider">
                               Explore Projects
                             </span>
@@ -318,13 +315,13 @@ export default function IndustriesSlider() {
 
                         {/* Decorative Corner - ALWAYS TOP RIGHT, BLUE */}
                         <div className="absolute right-0 top-0 w-32 h-32 opacity-5 group-hover:opacity-10 transition-opacity duration-500">
-                          <div className="w-full h-full bg-blue-500 rounded-full blur-3xl" />
+                          <div className="w-full h-full bg-[#c8d5b9] rounded-full blur-3xl" />
                         </div>
                       </div>
                     </div>
 
                     {/* Hover Border - ALWAYS BLUE */}
-                    <div className="absolute inset-0 border-2 border-transparent rounded-2xl transition-colors duration-500 group-hover:border-blue-500/30" />
+                    <div className="absolute inset-0 border-2 border-transparent rounded-2xl transition-colors duration-500 group-hover:border-[#5a7a4a]/30" />
                   </div>
                 </div>
               );
@@ -335,7 +332,7 @@ export default function IndustriesSlider() {
           <button
             onClick={prevSlide}
             disabled={isAnimating}
-            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 md:-translate-x-16 z-20 bg-white hover:bg-black text-black hover:text-white w-12 h-12 md:w-14 md:h-14 rounded-full shadow-lg flex items-center justify-center transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed group"
+            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 md:-translate-x-16 z-20 bg-white border border-[#e0dbd4] text-black hover:bg-[#5a7a4a] hover:text-white w-12 h-12 md:w-14 md:h-14 rounded-full shadow-lg flex items-center justify-center transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed group"
           >
             <svg
               className="w-6 h-6 transform group-hover:-translate-x-1 transition-transform duration-300"
@@ -355,7 +352,7 @@ export default function IndustriesSlider() {
           <button
             onClick={nextSlide}
             disabled={isAnimating}
-            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 md:translate-x-16 z-20 bg-white hover:bg-black text-black hover:text-white w-12 h-12 md:w-14 md:h-14 rounded-full shadow-lg flex items-center justify-center transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed group"
+            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 md:translate-x-16 z-20 bg-white border border-[#e0dbd4] text-black hover:bg-[#5a7a4a] hover:text-white w-12 h-12 md:w-14 md:h-14 rounded-full shadow-lg flex items-center justify-center transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed group"
           >
             <svg
               className="w-6 h-6 transform group-hover:translate-x-1 transition-transform duration-300"
@@ -381,8 +378,8 @@ export default function IndustriesSlider() {
                 disabled={isAnimating}
                 className={`transition-all duration-300 rounded-full ${
                   index === currentIndex
-                    ? "w-8 h-2 bg-black"
-                    : "w-2 h-2 bg-black/20 hover:bg-black/40"
+                    ? "w-8 h-2 bg-[#5a7a4a]"
+                    : "w-2 h-2 bg-[#5a7a4a]/20 hover:bg-[#5a7a4a]/40"
                 } disabled:cursor-not-allowed`}
               />
             ))}

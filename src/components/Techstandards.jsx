@@ -3,95 +3,89 @@
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { 
+  Box, 
+  Wind, 
+  Flame, 
+  FileText, 
+  Zap, 
+  Shield 
+} from "lucide-react";
 
 gsap.registerPlugin(ScrollTrigger);
 
 // Tools that will scroll in the marquee
 const tools = [
-  { name: "Revit", logo: "/tools/revit.svg", color: "from-blue-500 to-blue-600" },
-  { name: "Navisworks", logo: "/tools/navisworks.svg", color: "from-green-500 to-green-600" },
-  { name: "AutoCAD", logo: "/tools/autocad.svg", color: "from-red-500 to-red-600" },
-  { name: "BIM 360", logo: "/tools/bim360.svg", color: "from-orange-500 to-orange-600" },
-  { name: "Rhino", logo: "/tools/rhino.svg", color: "from-gray-600 to-gray-700" },
-  { name: "Grasshopper", logo: "/tools/grasshopper.svg", color: "from-green-600 to-green-700" },
+  {
+    name: "Revit",
+    logo: "/tools/revit.svg",
+    color: "from-blue-500 to-blue-600",
+  },
+  {
+    name: "Navisworks",
+    logo: "/tools/navisworks.svg",
+    color: "from-green-500 to-green-600",
+  },
+  {
+    name: "AutoCAD",
+    logo: "/tools/autocad.svg",
+    color: "from-red-500 to-red-600",
+  },
+  {
+    name: "BIM 360",
+    logo: "/tools/bim360.svg",
+    color: "from-orange-500 to-orange-600",
+  },
+  {
+    name: "Rhino",
+    logo: "/tools/rhino.svg",
+    color: "from-gray-600 to-gray-700",
+  },
+  {
+    name: "Grasshopper",
+    logo: "/tools/grasshopper.svg",
+    color: "from-green-600 to-green-700",
+  },
 ];
 
 const standards = [
   {
     name: "LOD 300-500",
     subtitle: "BIM Modeling",
-    iconType: "cube",
+    icon: Box,
     color: "from-blue-500 to-cyan-500",
   },
   {
     name: "ASHRAE",
     subtitle: "HVAC Standards",
-    iconType: "wind",
+    icon: Wind,
     color: "from-cyan-500 to-teal-500",
   },
   {
     name: "NFPA",
     subtitle: "Fire Protection",
-    iconType: "flame",
+    icon: Flame,
     color: "from-orange-500 to-red-500",
   },
   {
     name: "IBC",
     subtitle: "Building Code",
-    iconType: "document",
+    icon: FileText,
     color: "from-purple-500 to-pink-500",
   },
   {
     name: "IEC",
     subtitle: "Electrical Standards",
-    iconType: "bolt",
+    icon: Zap,
     color: "from-yellow-500 to-orange-500",
   },
   {
     name: "ISO 19650",
     subtitle: "BIM Standards",
-    iconType: "shield",
+    icon: Shield,
     color: "from-green-500 to-emerald-500",
   },
 ];
-
-// Icon component
-const StandardIcon = ({ type, className = "" }) => {
-  const icons = {
-    cube: (
-      <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
-      </svg>
-    ),
-    wind: (
-      <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M14.5 2c1.93 0 3.5 1.57 3.5 3.5S16.43 9 14.5 9H2m0 4h13.5c1.93 0 3.5 1.57 3.5 3.5S17.43 20 15.5 20 12 18.43 12 16.5m-6.5-9C5.5 5.57 3.93 4 2 4" />
-      </svg>
-    ),
-    flame: (
-      <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 2c.754 0 1.396.627 1.516 1.422C14.19 6.474 15 9.15 15 12c0 3.866-2.686 7-6 7s-6-3.134-6-7c0-2.85.81-5.526 1.484-8.578C4.604 2.627 5.246 2 6 2c.754 0 1.396.627 1.516 1.422.632 3.068 1.484 5.744 1.484 8.578 0 1.657 1.343 3 3 3s3-1.343 3-3c0-2.834.852-5.51 1.484-8.578C16.604 2.627 17.246 2 18 2" />
-      </svg>
-    ),
-    document: (
-      <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-      </svg>
-    ),
-    bolt: (
-      <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 10V3L4 14h7v7l9-11h-7z" />
-      </svg>
-    ),
-    shield: (
-      <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-      </svg>
-    ),
-  };
-
-  return icons[type] || null;
-};
 
 export default function TechMarquee() {
   const containerRef = useRef(null);
@@ -209,43 +203,43 @@ export default function TechMarquee() {
     <section
       id="tech-standards"
       ref={containerRef}
-      className="relative bg-black text-white py-24 overflow-hidden"
+      className="relative bg-[#f8f4ef] py-24 overflow-hidden"
     >
-      {/* Animated Background Grid */}
-      <div className="absolute inset-0 opacity-10">
+      {/* Animated Background Grid - Light version */}
+      <div className="absolute inset-0 opacity-30">
         <div
           className="absolute inset-0"
           style={{
-            backgroundImage: `linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
-                              linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px)`,
+            backgroundImage: `linear-gradient(rgba(26,31,22,0.08) 1px, transparent 1px),
+                              linear-gradient(90deg, rgba(26,31,22,0.08) 1px, transparent 1px)`,
             backgroundSize: "50px 50px",
           }}
         />
       </div>
 
-      {/* Gradient Glow */}
-      <div className="absolute top-0 left-1/4 w-[600px] h-[600px] bg-blue-500/10 rounded-full blur-3xl" />
-      <div className="absolute bottom-0 right-1/4 w-[600px] h-[600px] bg-purple-500/10 rounded-full blur-3xl" />
+      {/* Gradient Glow - Softer for light theme */}
+      <div className="absolute top-0 left-1/4 w-[600px] h-[600px] bg-[#c8d5b9]/20 rounded-full blur-3xl" />
+      <div className="absolute bottom-0 right-1/4 w-[600px] h-[600px] bg-[#5a7a4a]/10 rounded-full blur-3xl" />
 
       <div className="relative z-10 mx-auto max-w-7xl px-6">
         {/* Header */}
         <div className="max-w-3xl mx-auto text-center mb-16">
           <div className="inline-flex items-center gap-2 mb-4 tech-label-wrap">
-            <div className="h-px w-8 bg-white/20" />
-            <span className="tech-label text-xs uppercase tracking-[0.2em] text-white/50 font-medium">
+            <div className="h-px w-8 bg-[#1a1f16]/30" />
+            <span className="tech-label text-xs uppercase tracking-[0.2em] text-[#5a7a4a] font-medium">
               Enterprise Grade
             </span>
-            <div className="h-px w-8 bg-white/20" />
+            <div className="h-px w-8 bg-[#1a1f16]/30" />
           </div>
 
-          <h2 className="tech-title text-4xl md:text-5xl lg:text-6xl font-light leading-[1.1] text-white tracking-tight mb-6">
+          <h2 className="tech-title text-4xl md:text-5xl lg:text-6xl font-light leading-[1.1] text-[#1a1f16] tracking-tight mb-6">
             Technology &<br />
-            <span className="font-medium bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
+            <span className="font-medium bg-gradient-to-r from-[#5a7a4a] to-[#7a9a5a] bg-clip-text text-transparent">
               Standards
             </span>
           </h2>
 
-          <p className="tech-intro text-lg text-white/60 leading-relaxed max-w-2xl mx-auto">
+          <p className="tech-intro text-lg text-[#4a4f44]/80 leading-relaxed max-w-2xl mx-auto">
             Our workflows align with global BIM execution plans and
             international engineering standards to ensure accuracy, efficiency,
             and compliance.
@@ -256,31 +250,25 @@ export default function TechMarquee() {
         <div className="marquee-container mb-20">
           {/* Label */}
           <div className="flex items-center gap-4 mb-8">
-            <div className="h-px flex-1 bg-gradient-to-r from-transparent via-white/20 to-white/5" />
-            <span className="text-sm uppercase tracking-[0.3em] text-white/40 font-medium">
+            <div className="h-px flex-1 bg-gradient-to-r from-transparent via-[#1a1f16]/20 to-[#1a1f16]/10" />
+            <span className="text-sm uppercase tracking-[0.3em] text-[#5a7a4a] font-medium">
               Software Stack
             </span>
-            <div className="h-px flex-1 bg-gradient-to-l from-transparent via-white/20 to-white/5" />
+            <div className="h-px flex-1 bg-gradient-to-l from-transparent via-[#1a1f16]/20 to-[#1a1f16]/10" />
           </div>
 
           {/* Marquee Container */}
-          <div
-            ref={marqueeRef}
-            className="relative overflow-hidden py-8"
-          >
-            {/* Gradient Fade Edges */}
-            <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-black to-transparent z-10" />
-            <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-black to-transparent z-10" />
+          <div ref={marqueeRef} className="relative overflow-hidden py-8">
+            {/* Gradient Fade Edges - Cream to transparent */}
+            <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-[#f8f4ef] to-transparent z-10" />
+            <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-[#f8f4ef] to-transparent z-10" />
 
             {/* Marquee Content - Duplicated for seamless loop */}
             <div className="marquee-content flex gap-8 will-change-transform">
               {/* First set */}
               {tools.map((tool, index) => (
-                <div
-                  key={`tool-1-${index}`}
-                  className="flex-shrink-0 group"
-                >
-                  <div className="relative w-48 h-48 bg-gradient-to-br from-white/5 to-white/[0.02] backdrop-blur-sm rounded-2xl border border-white/10 hover:border-white/30 transition-all duration-500 flex flex-col items-center justify-center p-6 hover:scale-105">
+                <div key={`tool-1-${index}`} className="flex-shrink-0 group">
+                  <div className="relative w-48 h-48 bg-white rounded-2xl border border-[#e0dbd4] shadow-sm hover:shadow-xl transition-all duration-500 flex flex-col items-center justify-center p-6 hover:scale-105">
                     {/* Glow effect on hover */}
                     <div
                       className={`absolute inset-0 rounded-2xl bg-gradient-to-br ${tool.color} opacity-0 group-hover:opacity-10 transition-opacity duration-500 blur-xl`}
@@ -288,7 +276,7 @@ export default function TechMarquee() {
 
                     {/* Logo */}
                     <div className="relative w-20 h-20 mb-4 flex items-center justify-center">
-                      <div className="absolute inset-0 bg-white/5 rounded-xl group-hover:scale-110 transition-transform duration-500" />
+                      <div className="absolute inset-0 bg-[#1a1f16]/5 rounded-xl group-hover:scale-110 transition-transform duration-500" />
                       <img
                         src={tool.logo}
                         alt={tool.name}
@@ -297,7 +285,7 @@ export default function TechMarquee() {
                     </div>
 
                     {/* Name */}
-                    <span className="text-lg font-medium text-white/90 group-hover:text-white transition-colors duration-300">
+                    <span className="text-lg font-medium text-[#1a1f16]/90 group-hover:text-[#1a1f16] transition-colors duration-300">
                       {tool.name}
                     </span>
 
@@ -311,23 +299,20 @@ export default function TechMarquee() {
 
               {/* Duplicate set for seamless loop */}
               {tools.map((tool, index) => (
-                <div
-                  key={`tool-2-${index}`}
-                  className="flex-shrink-0 group"
-                >
-                  <div className="relative w-48 h-48 bg-gradient-to-br from-white/5 to-white/[0.02] backdrop-blur-sm rounded-2xl border border-white/10 hover:border-white/30 transition-all duration-500 flex flex-col items-center justify-center p-6 hover:scale-105">
+                <div key={`tool-2-${index}`} className="flex-shrink-0 group">
+                  <div className="relative w-48 h-48 bg-white rounded-2xl border border-[#e0dbd4] shadow-sm hover:shadow-xl transition-all duration-500 flex flex-col items-center justify-center p-6 hover:scale-105">
                     <div
                       className={`absolute inset-0 rounded-2xl bg-gradient-to-br ${tool.color} opacity-0 group-hover:opacity-10 transition-opacity duration-500 blur-xl`}
                     />
                     <div className="relative w-20 h-20 mb-4 flex items-center justify-center">
-                      <div className="absolute inset-0 bg-white/5 rounded-xl group-hover:scale-110 transition-transform duration-500" />
+                      <div className="absolute inset-0 bg-[#1a1f16]/5 rounded-xl group-hover:scale-110 transition-transform duration-500" />
                       <img
                         src={tool.logo}
                         alt={tool.name}
                         className="relative w-16 h-16 object-contain opacity-90 group-hover:opacity-100 transition-opacity duration-500"
                       />
                     </div>
-                    <span className="text-lg font-medium text-white/90 group-hover:text-white transition-colors duration-300">
+                    <span className="text-lg font-medium text-[#1a1f16]/90 group-hover:text-[#1a1f16] transition-colors duration-300">
                       {tool.name}
                     </span>
                     <div
@@ -345,70 +330,52 @@ export default function TechMarquee() {
           {/* Header */}
           <div className="standards-header mb-10">
             <div className="flex items-center gap-4 mb-2">
-              <div className="h-px flex-1 bg-gradient-to-r from-transparent via-white/20 to-white/5" />
-              <span className="text-sm uppercase tracking-[0.3em] text-white/40 font-medium">
+              <div className="h-px flex-1 bg-gradient-to-r from-transparent via-[#1a1f16]/20 to-[#1a1f16]/10" />
+              <span className="text-sm uppercase tracking-[0.3em] text-[#5a7a4a] font-medium">
                 Compliance Standards
               </span>
-              <div className="h-px flex-1 bg-gradient-to-l from-transparent via-white/20 to-white/5" />
+              <div className="h-px flex-1 bg-gradient-to-l from-transparent via-[#1a1f16]/20 to-[#1a1f16]/10" />
             </div>
           </div>
 
           {/* Badge Grid */}
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 max-w-6xl mx-auto">
-            {standards.map((standard, index) => (
-              <div
-                key={index}
-                className="standard-badge group"
-              >
-                <div className="relative bg-gradient-to-br from-white/10 to-white/[0.02] backdrop-blur-sm rounded-xl p-6 border border-white/10 hover:border-white/30 transition-all duration-500 hover:scale-105 text-center">
-                  {/* Glow */}
-                  <div
-                    className={`absolute inset-0 rounded-xl bg-gradient-to-br ${standard.color} opacity-0 group-hover:opacity-20 transition-opacity duration-500 blur-xl`}
-                  />
+            {standards.map((standard, index) => {
+              const IconComponent = standard.icon;
+              return (
+                <div key={index} className="standard-badge group">
+                  <div className="relative bg-white/90 backdrop-blur-sm rounded-xl p-6 border border-[#e0dbd4] hover:border-[#c8d5b9] transition-all duration-500 hover:scale-105 text-center shadow-sm">
+                    {/* Glow */}
+                    <div
+                      className={`absolute inset-0 rounded-xl bg-gradient-to-br ${standard.color} opacity-0 group-hover:opacity-10 transition-opacity duration-500 blur-xl`}
+                    />
 
-                  {/* Icon */}
-                  <div className="relative mb-3 group-hover:scale-110 transition-transform duration-500">
-                    <StandardIcon 
-                      type={standard.iconType} 
-                      className="w-12 h-12 mx-auto text-white/90 group-hover:text-white transition-colors duration-300"
+                    {/* Icon */}
+                    <div className="relative mb-3 group-hover:scale-110 transition-transform duration-500">
+                      <IconComponent 
+                        className="w-12 h-12 mx-auto text-[#5a7a4a] group-hover:text-[#3a5a2a] transition-colors duration-300"
+                        strokeWidth={1.5}
+                      />
+                    </div>
+
+                    {/* Name */}
+                    <h4 className="relative text-base font-bold text-[#1a1f16] mb-1">
+                      {standard.name}
+                    </h4>
+
+                    {/* Subtitle */}
+                    <p className="relative text-xs text-[#7a7f74]">
+                      {standard.subtitle}
+                    </p>
+
+                    {/* Bottom Accent */}
+                    <div
+                      className={`absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r ${standard.color} opacity-50 group-hover:opacity-100 transition-opacity duration-500 rounded-b-xl`}
                     />
                   </div>
-
-                  {/* Name */}
-                  <h4 className="relative text-base font-bold text-white mb-1">
-                    {standard.name}
-                  </h4>
-
-                  {/* Subtitle */}
-                  <p className="relative text-xs text-white/50">
-                    {standard.subtitle}
-                  </p>
-
-                  {/* Bottom Accent */}
-                  <div
-                    className={`absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r ${standard.color} opacity-50 group-hover:opacity-100 transition-opacity duration-500 rounded-b-xl`}
-                  />
                 </div>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Bottom Trust Bar */}
-        <div className="mt-16 flex flex-wrap items-center justify-center gap-8 py-8 border-t border-white/10">
-          <div className="flex items-center gap-3 text-white/50">
-            <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
-            <span className="text-sm font-medium">ISO 19650 Compliant</span>
-          </div>
-          <div className="w-px h-6 bg-white/10" />
-          <div className="flex items-center gap-3 text-white/50">
-            <div className="w-2 h-2 rounded-full bg-blue-500 animate-pulse" />
-            <span className="text-sm font-medium">Global BIM Standards</span>
-          </div>
-          <div className="w-px h-6 bg-white/10" />
-          <div className="flex items-center gap-3 text-white/50">
-            <div className="w-2 h-2 rounded-full bg-purple-500 animate-pulse" />
-            <span className="text-sm font-medium">Quality Assured</span>
+              );
+            })}
           </div>
         </div>
       </div>
