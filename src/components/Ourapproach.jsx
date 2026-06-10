@@ -5,33 +5,33 @@ import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion"
 
 const steps = [
   {
-    title: "Concept & Design",
-    desc: "Understanding project requirements and developing detailed engineering solutions.",
+    title: "Client Consultation",
+    desc: "Understanding project requirements, objectives, and expectations to establish a clear project direction.",
     image: "/process1.jpg",
   },
   {
-    title: "BIM Modeling",
-    desc: "Creating accurate 3D models for visualization and coordination.",
+    title: "Planning & Strategy",
+    desc: "Evaluating codes, safety standards, operational needs, and recommending the most suitable engineering solutions.",
     image: "/process2.jpg",
   },
   {
-    title: "Coordination & Clash Detection",
-    desc: "Ensuring all systems work seamlessly together before execution.",
+    title: "Engineering Design",
+    desc: "Developing efficient MEPFP designs, BIM deliverables, and technical documentation tailored to project requirements.",
     image: "/process3.jpg",
   },
   {
-    title: "Detailed Drawings",
-    desc: "Producing shop drawings and documentation for on-site implementation.",
+    title: "Coordination & Review",
+    desc: "Ensuring designs are coordinated, compliant, and aligned with project objectives before finalization.",
     image: "/process4.jpg",
   },
   {
-    title: "Execution Support",
-    desc: "Providing continuous support during construction for smooth delivery.",
+    title: "Project Delivery",
+    desc: "Providing finalized drawings, schedules, and documentation in accordance with client standards and requirements.",
     image: "/process5.jpg",
   },
   {
-    title: "Final Handover",
-    desc: "Ensuring all systems are tested, compliant, and ready for operation.",
+    title: "Design Support",
+    desc: "Offering design clarifications and engineering guidance when required during project implementation.",
     image: "/process6.jpg",
   },
 ];
@@ -123,7 +123,7 @@ export default function ProcessSection() {
                     y: i === activeStep ? 0 : 4,
                   }}
                   transition={{ duration: 0.3 }}
-                  className="text-[10px] tracking-wide text-[#5a7a4a] uppercase whitespace-nowrap mt-1 font-medium"
+                  className="text-[10px] tracking-wide text-transparent uppercase whitespace-nowrap mt-1 font-medium"
                 >
                   Active
                 </motion.span>

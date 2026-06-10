@@ -147,21 +147,12 @@ export default function ContactPage() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
               viewport={{ once: true }}
-              className="text-2xl md:text-3xl font-heading text-[#1a1a1a] leading-snug mb-5"
+              className="text-2xl md:text-3xl font-heading text-[#1a1a1a] leading-snug mb-10"
             >
               We'd Love to Hear <br />About Your Project
             </motion.h2>
 
-            <motion.p
-              initial={{ opacity: 0, y: 14 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.55, delay: 0.15 }}
-              viewport={{ once: true }}
-              className="text-[#777] text-sm leading-relaxed mb-10 max-w-sm"
-            >
-              Whether you're in the planning phase or need support during
-              execution, our team is ready to assist.
-            </motion.p>
+           
 
             {/* Contact details */}
             <motion.div
@@ -213,21 +204,7 @@ export default function ContactPage() {
               ))}
             </motion.div>
 
-            {/* Response time note */}
-            <motion.div
-              initial={{ opacity: 0, y: 10 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.3 }}
-              viewport={{ once: true }}
-              className="inline-flex items-center gap-2 px-4 py-2.5 rounded-full text-xs text-[#5a7a4a]"
-              style={{
-                background: "rgba(90,122,74,0.07)",
-                border: "1px solid rgba(90,122,74,0.18)",
-              }}
-            >
-              <span className="w-1.5 h-1.5 rounded-full bg-[#5a7a4a] animate-pulse" />
-              Typically responds within 24 hours
-            </motion.div>
+           
 
           </div>
 
@@ -403,7 +380,7 @@ export default function ContactPage() {
               viewport={{ once: true }}
               className="text-2xl md:text-3xl font-heading text-white leading-snug mb-4"
             >
-              Ready to Build <span className="text-[#a8c090]">Smarter Systems?</span>
+              Let's Build Your {" "}<span className="text-[#a8c090]">Next Project Together</span>
             </motion.h2>
             <motion.p
               initial={{ opacity: 0, y: 14 }}
@@ -412,8 +389,7 @@ export default function ContactPage() {
               viewport={{ once: true }}
               className="text-[#a0a89a] text-sm leading-relaxed"
             >
-              Let's collaborate to deliver efficient, reliable, and
-              high-performance engineering solutions.
+             Every project starts with a conversation. Share your requirements with us, and let's deliver engineering solutions that fit your project's needs.
             </motion.p>
           </div>
 

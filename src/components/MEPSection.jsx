@@ -11,8 +11,8 @@ import {
 const services = [
   {
     key: "mep",
-    title: "MEP Design",
-    desc: "Efficient, sustainable, and code-compliant MEP system design.",
+    title: "MEPFP Design",
+    desc: "Efficient, sustainable, and code-compliant MEPFP system design.",
     img: "https://images.unsplash.com/photo-1581094794329-c8112c4e5190?q=80&w=1600",
     scope: ["HVAC systems", "Electrical design", "Plumbing", "Fire systems"],
     deliverables: ["Drawings", "Load calculations", "BOQs"],
@@ -22,8 +22,8 @@ const services = [
     title: "BIM Modeling",
     desc: "High-precision BIM models for visualization and planning.",
     img: "https://images.unsplash.com/photo-1558655146-d09347e92766?q=80&w=1600",
-    scope: ["3D modeling", "Shop drawings", "As-built"],
-    deliverables: ["Revit models", "Drawings", "Quantities"],
+    scope: ["3D modeling", "Multi-Discipline BIM Coordination", "Document Support"],
+    deliverables: ["LOD Complinant Revit Models", "Drawings & Installation Layouts", "BOQ/ Quantity Schedules"],
   },
   {
     key: "coord",
@@ -35,19 +35,19 @@ const services = [
   },
   {
     key: "support",
-    title: "Construction Support",
-    desc: "Ensuring accurate implementation on site.",
+    title: "Design Support",
+    desc: "Technical guidance to address design-related challenges during construction.",
     img: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=1600",
-    scope: ["RFI handling", "Site support", "Updates"],
+    scope: ["RFI handling", "Design Issue Resolution", "Technical Assistance"],
     deliverables: ["Reports", "Updated drawings"],
   },
   {
     key: "fm",
-    title: "Facility Management",
-    desc: "Data-driven BIM for lifecycle management.",
+    title: "Lighting Design",
+    desc: "Optimized lighting solutions through simulation and analysis.",
     img: "https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=1600",
-    scope: ["Asset data", "COBie", "Digital twin"],
-    deliverables: ["FM models", "Asset database"],
+    scope: ["Illumination Calculation", "Lighting Simulation", "Fixture Selection"],
+    deliverables: ["Lighting Layouts", "Illumination Reports", "Fixture Schedules"],
   },
 ];
 
@@ -60,7 +60,7 @@ export default function ServicesTabs() {
     if (paused) return;
     const interval = setInterval(() => {
       setActiveIndex((prev) => (prev + 1) % services.length);
-    }, 3500);
+    }, 35000);
     return () => clearInterval(interval);
   }, [paused]);
 
@@ -98,7 +98,7 @@ export default function ServicesTabs() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
           viewport={{ once: true }}
-          className="text-xs tracking-[0.25em] uppercase text-[#5a7a4a] mb-4"
+          className="text-xl tracking-[0.25em] uppercase text-[#5a7a4a] mb-4"
         >
           What We Offer
         </motion.p>
@@ -107,19 +107,11 @@ export default function ServicesTabs() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.1 }}
           viewport={{ once: true }}
-          className="font-heading text-3xl md:text-5xl text-white mb-4"
+          className="font-heading text-3xl md:text-6xl text-white mb-4"
         >
           Our Expertise
         </motion.h2>
-        <motion.p
-          initial={{ opacity: 0, y: 14 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.55, delay: 0.15 }}
-          viewport={{ once: true }}
-          className="text-[#a0a89a] text-base max-w-xl mx-auto leading-relaxed"
-        >
-          Advanced MEP and BIM solutions crafted with precision and modern workflows.
-        </motion.p>
+       
       </div>
 
       {/* TABS */}

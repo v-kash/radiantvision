@@ -12,48 +12,54 @@ const industries = [
     title: "Commercial",
     subtitle: "Developments",
     image: "/industries/commercial.jpg",
-    description: "Office towers, retail complexes, and mixed-use developments",
-    stats: "500+ Projects",
+    description:
+      "MEPFP and BIM solutions for offices, retail spaces, business parks, and mixed-use developments.",
+    stats: "Offices • Retail • Mixed-Use",
   },
   {
     id: 2,
     title: "Residential",
     subtitle: "High-Rise & Villas",
     image: "/industries/residential.jpg",
-    description: "Luxury apartments, condominiums, and premium villas",
-    stats: "200+ Buildings",
+    description:
+      "efficient building services for apartments, villas, high-rise residences, and housing projects.",
+    stats: "Apartments • Villas • High-Rise",
   },
   {
     id: 3,
     title: "Healthcare",
     subtitle: "& Hospitals",
     image: "/industries/healthcare.jpg",
-    description: "Medical facilities with critical MEP requirements",
-    stats: "50+ Facilities",
+    description:
+      "Engineering systems designed for hospitals, clinics, laboratories, and healthcare environments.",
+    stats: "Hospitals • Clinics • Labs",
   },
   {
     id: 4,
-    title: "Data",
-    subtitle: "Centers",
+    title: "Educational",
+    subtitle: "Institutions",
     image: "/industries/datacenter.jpg",
-    description: "Mission-critical infrastructure with precision cooling",
-    stats: "30+ Centers",
+    description:
+      "Reliable engineering solutions for schools, universities, training centers, and campuses.",
+    stats: "Schools • Universities • Campuses",
   },
   {
     id: 5,
     title: "Industrial",
     subtitle: "& Manufacturing",
     image: "/industries/industrial.jpg",
-    description: "Factories, warehouses, and production facilities",
-    stats: "100+ Sites",
+    description:
+      "Specialized MEPFP and BIM services for manufacturing units, warehouses, and industrial buildings.",
+    stats: "Factories • Warehouses • Production Units",
   },
   {
     id: 6,
     title: "Infrastructure",
     subtitle: "Projects",
     image: "/industries/infrastructure.jpg",
-    description: "Transportation hubs, utilities, and public works",
-    stats: "75+ Projects",
+    description:
+      "EPFP and BIM solutions for airports, transit facilities, and public infrastructure projects.",
+    stats: "Airports • Transit • Public Facilities",
   },
 ];
 
@@ -190,7 +196,7 @@ export default function IndustriesSlider() {
       if (!isAnimating) {
         nextSlide();
       }
-    }, 5000); // Change slide every 5 seconds
+    }, 1000000); // Change slide every 5 seconds
 
     return () => clearInterval(interval);
   }, [currentIndex, isAnimating]);
@@ -199,7 +205,8 @@ export default function IndustriesSlider() {
     <section
       id="industries"
       ref={containerRef}
-className="relative bg-[#f8f4ef] text-black py-16 overflow-hidden"    >
+      className="relative bg-[#f8f4ef] text-black py-16 overflow-hidden"
+    >
       {/* Ambient Background */}
 
       <div className="relative z-10 mx-auto max-w-7xl px-6">
@@ -207,16 +214,14 @@ className="relative bg-[#f8f4ef] text-black py-16 overflow-hidden"    >
         <div className="max-w-3xl mx-auto text-center mb-12">
           <div className="inline-flex items-center gap-2 mb-4 industry-label-wrap">
             <div className="h-px w-8 bg-[#5a7a4a]/20" />
-            <span className="industry-label text-xs uppercase tracking-[0.2em] text-[#6b705c] font-medium">
+            <span className="industry-label text-xl uppercase tracking-[0.2em] text-[#6b705c] font-medium">
               Industries We Serve
             </span>
             <div className="h-px w-8 bg-[#5a7a4a]/20" />
           </div>
 
           <h2 className="industry-title text-4xl md:text-5xl lg:text-6xl font-light leading-[1.1] text-black tracking-tight mb-6">
-            Trusted across
-            <br />
-            <span className="font-medium">diverse sectors</span>
+            Market Sectors
           </h2>
 
           <p className="industry-intro text-lg text-[#7a7a7a] leading-relaxed max-w-2xl mx-auto">
@@ -241,7 +246,7 @@ className="relative bg-[#f8f4ef] text-black py-16 overflow-hidden"    >
                     zIndex: index === currentIndex ? 10 : 1,
                   }}
                 >
-                  <div  className="group relative bg-white border border-[#e0dbd4] rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-500 h-full">
+                  <div className="group relative bg-white border border-[#e0dbd4] rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-500 h-full">
                     <div className="grid md:grid-cols-2 h-full">
                       {/* Image Side - Diagonal Clip - ALWAYS ON LEFT */}
                       <div
@@ -263,14 +268,9 @@ className="relative bg-[#f8f4ef] text-black py-16 overflow-hidden"    >
                         <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#1a1f16]/20 to-[#1a1f16]/40 group-hover:via-black/50 transition-all duration-500" />
 
                         {/* Number Overlay - ALWAYS ON RIGHT */}
-                        <div className="absolute right-8 top-8">
-                          <div className="text-8xl md:text-9xl font-light leading-none text-[#1a1f16]/15 group-hover:text-[#1a1f16]/25 transition-colors duration-500">
-                            0{industry.id}
-                          </div>
-                        </div>
+                        
 
                         {/* Stats Badge - ALWAYS ON RIGHT */}
-                        
                       </div>
 
                       {/* Content Side - ALWAYS ON RIGHT */}

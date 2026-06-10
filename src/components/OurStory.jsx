@@ -108,23 +108,7 @@ export default function OurStory() {
             />
           </div>
 
-          {/* FLOATING STAT CARD */}
-          <motion.div
-            initial={{ opacity: 0, y: 16, scale: 0.95 }}
-            whileInView={{ opacity: 1, y: 0, scale: 1 }}
-            transition={{ duration: 0.55, delay: 0.35 }}
-            viewport={{ once: true }}
-            className="absolute -bottom-4 -left-4 rounded-xl px-5 py-4 shadow-lg"
-            style={{
-              background: "#1a1f16",
-              border: "1px solid rgba(255,255,255,0.06)",
-            }}
-          >
-            <p className="text-xl font-heading text-white mb-0.5">50+</p>
-            <p className="text-[10px] tracking-[0.15em] uppercase text-white/45">
-              Projects Delivered
-            </p>
-          </motion.div>
+         
 
          
 

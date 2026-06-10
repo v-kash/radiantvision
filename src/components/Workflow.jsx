@@ -10,67 +10,88 @@ const workflowSteps = [
   {
     id: 1,
     number: "01",
-    title: "Design",
-    subtitle: "Engineering Excellence",
+    title: "Discover",
+    subtitle: "Understanding Your Vision",
     description:
-      "Engineering calculations, system planning, code compliance.",
+      "Every successful project begins with listening. We take the time to understand your goals, challenges, and project requirements before any design work starts.",
     details: [
-      "Load calculations & energy modeling",
-      "International code compliance (IBC, ASHRAE, NFPA)",
-      "System optimization & equipment selection",
+      "Review project objectives and architectural intent",
+      "Discuss scope, timelines, and key expectations",
+      "Identify codes, standards, and project constraints",
     ],
-    image: "/workflow/design.jpg", // Add your images here
+    image: "/workflow/discover.jpg",
     color: "from-blue-500 to-cyan-500",
     accentColor: "blue-500",
   },
+
   {
     id: 2,
     number: "02",
-    title: "Model",
-    subtitle: "BIM Development",
-    description: "Revit-based BIM modeling (LOD 300–500).",
+    title: "Design",
+    subtitle: "Engineering Smart Solutions",
+    description:
+      "Our engineers develop efficient MEPFP systems tailored to your project's unique operational and performance needs.",
     details: [
-      "Parametric 3D modeling in Revit",
-      "LOD 300-500 development",
-      "Integrated system coordination",
+      "HVAC, electrical, plumbing, and fire protection design",
+      "Engineering analysis and load calculations",
+      "Equipment selection and system optimization",
     ],
-    image: "/workflow/model.jpg",
+    image: "/workflow/design.jpg",
     color: "from-cyan-500 to-teal-500",
     accentColor: "cyan-500",
   },
+
   {
     id: 3,
     number: "03",
     title: "Coordinate",
-    subtitle: "Clash Resolution",
+    subtitle: "Seamless BIM Collaboration",
     description:
-      "Clash detection using Navisworks and multidisciplinary integration.",
+      "Through BIM coordination, we align every discipline to minimize conflicts and improve construction efficiency.",
     details: [
-      "Navisworks clash detection & reporting",
-      "Multi-discipline coordination meetings",
-      "Issue resolution & model refinement",
+      "Revit MEP modeling and documentation",
+      "Clash detection across all disciplines",
+      "Coordinated drawings and specifications",
     ],
     image: "/workflow/coordinate.jpg",
     color: "from-purple-500 to-pink-500",
     accentColor: "purple-500",
   },
+
   {
     id: 4,
     number: "04",
-    title: "Deliver",
-    subtitle: "Construction Ready",
+    title: "Validate",
+    subtitle: "Quality & Compliance Assurance",
     description:
-      "Construction-ready documentation, shop drawings, and as-built models.",
+      "Every design undergoes rigorous review to ensure accuracy, compliance, and readiness for approval.",
     details: [
-      "Fabrication & shop drawings",
-      "Construction documentation packages",
-      "As-built model deliverables",
+      "Comprehensive internal reviews",
+      "Cross-disciplinary design verification",
+      "Client feedback integration and refinements",
+      "Permit and authority submission support",
     ],
-    image: "/workflow/deliver.jpg",
-    color: "from-green-500 to-emerald-500",
-    accentColor: "green-500",
+    image: "/workflow/validate.jpg",
+    color: "from-orange-500 to-amber-500",
+    accentColor: "orange-500",
   },
-];
+
+ {
+  id: 5,
+  number: "05",
+  title: "Deliver",
+  subtitle: "Documentation Excellence",
+  description:
+    "We provide comprehensive project documentation tailored to client requirements and industry standards, ensuring a smooth transition from design to execution.",
+  details: [
+    "Standardized documentation aligned with client requirements",
+    "Detailed schedules, specifications, and deliverables",
+    "Quality-checked final documentation for project handover",
+  ],
+  image: "/workflow/deliver.jpg",
+  color: "from-green-500 to-emerald-500",
+  accentColor: "green-500",
+},]
 
 export default function WorkflowTimeline() {
   const containerRef = useRef(null);
@@ -197,7 +218,7 @@ export default function WorkflowTimeline() {
         <div className="max-w-3xl mx-auto text-center mb-20">
           <div className="inline-flex items-center gap-2 mb-4 workflow-label-wrap">
             <div className="h-px w-8 bg-black/20" />
-            <span className="workflow-label text-xs uppercase tracking-[0.2em] text-[#6b705c] font-medium">
+            <span className="workflow-label text-xl uppercase tracking-[0.2em] text-[#6b705c] font-medium">
               How We Work
             </span>
             <div className="h-px w-8 bg-black/20" />
@@ -207,10 +228,7 @@ export default function WorkflowTimeline() {
             Our Workflow
           </h2>
 
-          <p className="text-lg text-[#7a7a7a] leading-relaxed max-w-2xl mx-auto">
-            A proven 4-step process ensuring precision, coordination, and
-            on-time delivery for complex MEP projects.
-          </p>
+         
         </div>
 
         {/* Timeline Container */}
@@ -239,20 +257,15 @@ export default function WorkflowTimeline() {
                   {/* Center Node */}
                   <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-20 hidden lg:block">
                     <div
-                      className={`relative w-16 h-16 rounded-full border-4 border-white shadow-xl transition-all duration-500 ${
+                      className={`relative w-16 h-16 rounded-full border-4 border-[#588740] shadow-xl transition-all duration-500 ${
                         activeStep >= index
-                          ? `bg-[#5a7a4a] scale-110`
-                          : "bg-[#e0dbd4] scale-100"
+                          ? `bg-[#ffffff] `
+                          : "bg-[#ffffff] "
                       }`}
                     >
-                      {/* Pulse effect when active */}
-                      {activeStep === index && (
-                        <div
-                          className={`absolute inset-0 rounded-full bg-[#5a7a4a] animate-ping opacity-75`}
-                        />
-                      )}
+
                       {/* Number */}
-                      <div className="relative flex items-center justify-center h-full text-white font-bold text-lg">
+                      <div className="relative flex items-center justify-center h-full text-[#588740] font-bold text-lg">
                         {step.number}
                       </div>
                     </div>
@@ -354,28 +367,7 @@ export default function WorkflowTimeline() {
                         ))}
                       </ul>
 
-                      {/* Learn More Link */}
-                      <div className="mt-6">
-                        <a
-                          href="#contact"
-                          className={`inline-flex items-center gap-2 text-${step.accentColor} hover:gap-4 transition-all duration-300 font-medium group`}
-                        >
-                          <span>Learn More</span>
-                          <svg
-                            className="w-5 h-5"
-                            fill="none"
-                            viewBox="0 0 24 24"
-                            stroke="currentColor"
-                          >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              strokeWidth={2}
-                              d="M17 8l4 4m0 0l-4 4m4-4H3"
-                            />
-                          </svg>
-                        </a>
-                      </div>
+                      
                     </div>
                   </div>
                 </div>

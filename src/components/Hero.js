@@ -87,12 +87,10 @@ export default function Hero() {
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-medium leading-[1.05]">
               <span className="block overflow-hidden"><span className="block reveal-text">Global MEP & BIM</span></span>
               <span className="block overflow-hidden"><span className="block reveal-text">Engineering Solutions</span></span>
-              <span className="block overflow-hidden"><span className="block reveal-text">for Complex Built Environments</span></span>
+              <span className="block overflow-hidden"><span className="block reveal-text">From Vision To Built Excellence</span></span>
             </h1>
 
-            <p className="mt-6 text-lg text-white/70 reveal-para">
-              We deliver coordinated MEP design and BIM services for global projects.
-            </p>
+            
 
             <div className="mt-8 flex gap-4">
               <a href="#services" className="btn-anim bg-[#5a7a4a] text-white px-6 py-3 text-sm rounded-md hover:bg-[#4a693d] transition">
@@ -109,63 +107,59 @@ export default function Hero() {
 
       {/* SERVICES */}
       <section id="services" className="relative bg-[#f8f4ef] text-black py-16 overflow-hidden">
+  {/* Soft glow */}
+  <div className="absolute top-0 left-1/4 w-96 h-96 bg-[#c8d5b9]/20 rounded-full blur-3xl" />
+  <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-[#e0dbd4]/30 rounded-full blur-3xl" />
 
-        {/* Soft glow */}
-        <div className="absolute top-0 left-1/4 w-96 h-96 bg-[#c8d5b9]/20 rounded-full blur-3xl" />
-        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-[#e0dbd4]/30 rounded-full blur-3xl" />
+  <div className="relative z-10 mx-auto max-w-5xl px-6">
+    {/* Header */}
+    <div className="text-center mb-14">
+      <div className="inline-flex items-center gap-2 mb-4">
+        <div className="h-px w-8 bg-[#5a7a4a]/20" />
+        <span className="text-xl uppercase tracking-[0.2em] text-[#6b705c] font-medium">What We Do</span>
+        <div className="h-px w-8 bg-[#5a7a4a]/20" />
+      </div>
+      <h2 className="text-6xl font-light leading-snug">
+        Engineering excellence
+        
+      </h2>
+    </div>
 
-        <div className="relative z-10 mx-auto max-w-6xl px-6">
+    {/* Glass Cards */}
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+      {[
+        ["01", "MEP", "Engineering Design", "HVAC, electrical, plumbing, and fire protection systems engineered to international standards.", "🔧"],
+        ["02", "BIM", "Modeling & Coordination", "Multi-discipline BIM models with clash detection and coordination workflows.", "📐"],
+        ["03", "Construction", "Support", "Shop drawings and technical support across the construction lifecycle.", "🏗️"],
+      ].map(([num, word1, word2, desc], i) => (
+        <div
+          key={i}
+          className="group relative rounded-[20px] border border-white/75 bg-white/55 backdrop-blur-md p-8 overflow-hidden
+                     transition-all duration-300
+                     hover:-translate-y-1.5 hover:bg-white/80 hover:border-[#5a7a4a]/30 hover:shadow-[0_20px_48px_rgba(90,122,74,0.13)]"
+        >
+          {/* Glass sheen */}
 
-          {/* Header */}
-          <div className="text-center mb-20">
-            <div className="inline-flex items-center gap-2 mb-4">
-              <div className="h-px w-8 bg-[#5a7a4a]/20" />
-              <span className="text-xs uppercase tracking-[0.2em] text-[#6b705c] font-medium">What We Do</span>
-              <div className="h-px w-8 bg-[#5a7a4a]/20" />
-            </div>
-
-            <h2 className="text-5xl font-light">
-              Engineering excellence
-              <br />
-              <span className="font-medium text-[#5a7a4a]">for complex environments</span>
-            </h2>
+          {/* Number */}
+          <div className="text-[56px] font-extralight leading-none tracking-tighter text-[#5a7a4a]/80  mb-4">
+            {num}
           </div>
 
-          {/* Services */}
-          <div className="max-w-4xl mx-auto space-y-16">
+          {/* Divider */}
+          <div className="h-[1.5px] w-8 bg-[#5a7a4a]/25 mb-3.5 rounded-full transition-all duration-300 group-hover:w-14 group-hover:bg-[#5a7a4a]" />
 
-            {[ 
-              ["01","MEP Engineering Design","HVAC, electrical, plumbing, and fire protection systems engineered to international standards."],
-              ["02","BIM Modeling & Coordination","Multi-discipline BIM models with clash detection and coordination workflows."],
-              ["03","Construction Support","Shop drawings and technical support across the construction lifecycle."]
-            ].map((s,i)=>(
-              <div key={i} className="service-item group">
+          {/* Title */}
+          <h3 className="text-[17px] font-semibold text-[#27411e] mb-2.5 leading-snug">
+            {word1} <span className="font-semibold text-[#27411e]">{word2}</span>
+          </h3>
 
-                <div className="grid md:grid-cols-12 gap-6">
-                  <div className="md:col-span-2">
-                    <div className="text-8xl text-[#5a7a4a]/10 group-hover:text-[#5a7a4a]/30 transition">
-                      {s[0]}
-                    </div>
-                  </div>
-
-                  <div className="md:col-span-10">
-                    <h3 className="text-3xl font-light mb-2">
-                      {s[1].split(" ")[0]} <span className="font-medium">{s[1].split(" ").slice(1).join(" ")}</span>
-                    </h3>
-
-                    <div className="h-px w-12 bg-[#5a7a4a]/20 mb-4 group-hover:w-24 group-hover:bg-[#5a7a4a] transition-all" />
-
-                    <p className="text-[#5f5f5f]">{s[2]}</p>
-                  </div>
-                </div>
-
-                <div className="h-px w-full bg-gradient-to-r from-transparent via-[#e0dbd4] to-transparent mt-12 group-hover:via-[#5a7a4a]/30 transition" />
-              </div>
-            ))}
-
-          </div>
+          {/* Description */}
+          <p className="text-sm text-[#577b44] leading-relaxed">{desc}</p>
         </div>
-      </section>
+      ))}
+    </div>
+  </div>
+</section>
     </>
   );
 }

@@ -4,13 +4,13 @@ import { motion } from "framer-motion";
 
 const services = [
   {
-    title: "MEP Engineering Design",
+    title: "MEPFP Engineering Design",
     desc: "Efficient and code-compliant system design.",
     img: "https://images.unsplash.com/photo-1558655146-d09347e92766?q=80&w=1200",
   },
   {
     title: "BIM Modeling",
-    desc: "High-precision 3D BIM models.",
+    desc: "High-precision BIM models for project delivery.",
     img: "https://images.unsplash.com/photo-1558655146-d09347e92766?q=80&w=1200",
   },
   {
@@ -24,15 +24,15 @@ const services = [
     img: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=1200",
   },
   {
-    title: "Facility Management BIM",
-    desc: "Smart lifecycle and asset management.",
+    title: "Lighting Design & Simulation",
+    desc: "Lighting solutions through simulation and analysis",
     img: "https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=1200",
   },
 ];
 
 export default function ServicesGrid() {
   return (
-    <section className="py-24 px-[8%] bg-[#f8f4ef]">
+    <section className="py-16 px-[8%] bg-[#f8f4ef]">
       <div className="max-w-7xl mx-auto">
 
         {/* HEADING */}
@@ -42,7 +42,7 @@ export default function ServicesGrid() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
-            className="text-xs tracking-[0.25em] uppercase text-[#5a7a4a] mb-4"
+            className="text-xl tracking-[0.25em] uppercase text-[#5a7a4a] mb-4"
           >
             What We Do
           </motion.p>
@@ -51,7 +51,7 @@ export default function ServicesGrid() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
             viewport={{ once: true }}
-            className="font-heading text-3xl md:text-5xl text-[#1a1a1a] mb-4"
+            className="font-heading text-3xl md:text-6xl text-[#1a1a1a] mb-4"
           >
             Our Services
           </motion.h2>
@@ -62,7 +62,7 @@ export default function ServicesGrid() {
             viewport={{ once: true }}
             className="text-[#777] text-base max-w-xl mx-auto leading-relaxed"
           >
-            Comprehensive MEP and BIM solutions tailored for modern construction.
+            Comprehensive MEPFP and BIM solutions tailored for modern construction.
           </motion.p>
         </div>
 
@@ -120,15 +120,13 @@ export default function ServicesGrid() {
                 <div>
                   {/* Green accent line */}
                   <div className="w-6 h-[2px] bg-[#c8d5b9] mb-4" />
-                  <h3 className="font-heading text-base text-white leading-snug mb-2">
+                  <h3 className="font-heading text-lg text-white leading-snug mb-2">
                     {service.title}
                   </h3>
                   <p className="text-xs text-white/65 leading-relaxed mb-4">
                     {service.desc}
                   </p>
-                  <span className="text-[11px] tracking-[0.15em] uppercase text-[#c8d5b9]">
-                    Explore →
-                  </span>
+                 
                 </div>
 
               </div>

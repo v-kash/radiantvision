@@ -18,34 +18,35 @@ gsap.registerPlugin(ScrollTrigger);
 const tools = [
   {
     name: "Revit",
-    logo: "/tools/revit.svg",
+    logo: "/tools/revit.jpg",
     color: "from-blue-500 to-blue-600",
   },
   {
     name: "Navisworks",
-    logo: "/tools/navisworks.svg",
-    color: "from-green-500 to-green-600",
+    logo: "/tools/navisworks.png",
+    color: "from-blue-500 to-blue-600",
   },
   {
     name: "AutoCAD",
-    logo: "/tools/autocad.svg",
+    logo: "/tools/autocad.png",
     color: "from-red-500 to-red-600",
   },
   {
     name: "BIM 360",
-    logo: "/tools/bim360.svg",
-    color: "from-orange-500 to-orange-600",
+    logo: "/tools/bim360.png",
+    color: "from-blue-500 to-blue-600",
+  },
+    {
+    name: "HAP",
+    logo: "/tools/hap.jpeg",
+    color: "from-green-500 to-green-600",
   },
   {
-    name: "Rhino",
-    logo: "/tools/rhino.svg",
-    color: "from-gray-600 to-gray-700",
+    name: "Visual",
+    logo: "/tools/visual.png",
+    color: "from-yellow-500 to-amber-600",
   },
-  {
-    name: "Grasshopper",
-    logo: "/tools/grasshopper.svg",
-    color: "from-green-600 to-green-700",
-  },
+
 ];
 
 const standards = [
@@ -226,16 +227,17 @@ export default function TechMarquee() {
         <div className="max-w-3xl mx-auto text-center mb-16">
           <div className="inline-flex items-center gap-2 mb-4 tech-label-wrap">
             <div className="h-px w-8 bg-[#1a1f16]/30" />
-            <span className="tech-label text-xs uppercase tracking-[0.2em] text-[#5a7a4a] font-medium">
+            <span className="tech-label text-xl uppercase tracking-[0.2em] text-[#5a7a4a] font-medium">
               Enterprise Grade
             </span>
             <div className="h-px w-8 bg-[#1a1f16]/30" />
           </div>
 
-          <h2 className="tech-title text-4xl md:text-5xl lg:text-6xl font-light leading-[1.1] text-[#1a1f16] tracking-tight mb-6">
-            Technology &<br />
+          <h2 className="tech-title text-6xl md:text-5xl lg:text-6xl font-light leading-[1.1] text-[#1a1f16] tracking-tight mb-6">
+            Engineering Standards <br/>
+
             <span className="font-medium bg-gradient-to-r from-[#5a7a4a] to-[#7a9a5a] bg-clip-text text-transparent">
-              Standards
+              Advanced Tools
             </span>
           </h2>
 
@@ -247,7 +249,7 @@ export default function TechMarquee() {
         </div>
 
         {/* Software Marquee */}
-        <div className="marquee-container mb-20">
+        <div className="marquee-container ">
           {/* Label */}
           <div className="flex items-center gap-4 mb-8">
             <div className="h-px flex-1 bg-gradient-to-r from-transparent via-[#1a1f16]/20 to-[#1a1f16]/10" />
@@ -291,7 +293,7 @@ export default function TechMarquee() {
 
                     {/* Accent Line */}
                     <div
-                      className={`absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r ${tool.color} opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-b-2xl`}
+                      className={`absolute bottom-0 left-0 mx-1.5 right-0 h-1 bg-gradient-to-r ${tool.color} opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-b-xl`}
                     />
                   </div>
                 </div>
@@ -325,9 +327,7 @@ export default function TechMarquee() {
           </div>
         </div>
 
-        {/* Standards Badge Wall */}
-        <div>
-          {/* Header */}
+        {/* <div>
           <div className="standards-header mb-10">
             <div className="flex items-center gap-4 mb-2">
               <div className="h-px flex-1 bg-gradient-to-r from-transparent via-[#1a1f16]/20 to-[#1a1f16]/10" />
@@ -338,19 +338,16 @@ export default function TechMarquee() {
             </div>
           </div>
 
-          {/* Badge Grid */}
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 max-w-6xl mx-auto">
             {standards.map((standard, index) => {
               const IconComponent = standard.icon;
               return (
                 <div key={index} className="standard-badge group">
                   <div className="relative bg-white/90 backdrop-blur-sm rounded-xl p-6 border border-[#e0dbd4] hover:border-[#c8d5b9] transition-all duration-500 hover:scale-105 text-center shadow-sm">
-                    {/* Glow */}
                     <div
                       className={`absolute inset-0 rounded-xl bg-gradient-to-br ${standard.color} opacity-0 group-hover:opacity-10 transition-opacity duration-500 blur-xl`}
                     />
 
-                    {/* Icon */}
                     <div className="relative mb-3 group-hover:scale-110 transition-transform duration-500">
                       <IconComponent 
                         className="w-12 h-12 mx-auto text-[#5a7a4a] group-hover:text-[#3a5a2a] transition-colors duration-300"
@@ -358,17 +355,14 @@ export default function TechMarquee() {
                       />
                     </div>
 
-                    {/* Name */}
                     <h4 className="relative text-base font-bold text-[#1a1f16] mb-1">
                       {standard.name}
                     </h4>
 
-                    {/* Subtitle */}
                     <p className="relative text-xs text-[#7a7f74]">
                       {standard.subtitle}
                     </p>
 
-                    {/* Bottom Accent */}
                     <div
                       className={`absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r ${standard.color} opacity-50 group-hover:opacity-100 transition-opacity duration-500 rounded-b-xl`}
                     />
@@ -377,7 +371,7 @@ export default function TechMarquee() {
               );
             })}
           </div>
-        </div>
+        </div> */}
       </div>
     </section>
   );
