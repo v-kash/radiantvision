@@ -16,7 +16,7 @@ export default function ServicesHero() {
       <div
         className="absolute inset-0 bg-cover bg-center"
         style={{
-          backgroundImage: "url('/hero2.jpg')", // replace with your image
+          backgroundImage: "url('/hero2.jpeg')", // replace with your image
         }}
       />
 
@@ -41,7 +41,7 @@ export default function ServicesHero() {
           transition={{ delay: 0.2, duration: 0.8 }}
           className="font-body text-white/90 text-lg md:text-xl max-w-2xl leading-relaxed mb-8"
         >
-          Delivering precise MEP engineering and advanced BIM solutions to
+          Delivering precise MEPFP engineering and advanced BIM solutions to
           streamline design, coordination, and construction workflows.
         </motion.p>
 
