@@ -51,7 +51,7 @@ export default function ProjectsHero() {
           transition={{ delay: 0.2, duration: 0.8 }}
           className="font-body text-white/90 text-lg md:text-xl max-w-2xl leading-relaxed mb-10"
         >
-          Explore how we deliver high-performance MEPFP solutions through
+          Explore how we deliver high performance MEPFP solutions through
           precision design, advanced BIM coordination, and seamless execution
           across diverse industries.
         </motion.p>

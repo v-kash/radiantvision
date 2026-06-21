@@ -150,7 +150,7 @@ export default function HumanTouchCTA() {
                 className="text-[#777] text-base leading-relaxed"
               >
                 If you're looking for a team that values precision,
-                coordination, and real-world performance — we're here.
+                coordination, and real world performance. we're here.
               </motion.p>
 
               <motion.div

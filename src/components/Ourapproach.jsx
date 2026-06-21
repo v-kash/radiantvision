@@ -31,7 +31,7 @@ const steps = [
   },
   {
     title: "Project Delivery",
-    desc: "Providing finalized drawings, schedules, and documentation in accordance with client standards and requirements.",
+    desc: "Providing finalized drawings, schedules and documentation in accordance with client standards and requirements.",
     image: "/process5.jpg",
   },
   {

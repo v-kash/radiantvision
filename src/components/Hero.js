@@ -180,7 +180,7 @@ export default function Hero() {
               <div className="h-px w-8 bg-[#5a7a4a]/20" />
             </div>
             <h2 className="text-6xl font-light leading-snug">
-              Engineering excellence
+              Engineering Excellence
             </h2>
           </div>
 
@@ -191,7 +191,7 @@ export default function Hero() {
                 "01",
                 "MEPFP",
                 "Engineering Design",
-                "HVAC, electrical, plumbing, and fire protection systems engineered to international standards.",
+                "Mechanical, Electrical, Plumbing, and Fire Protection Systems engineered to international standards.",
                 "🔧",
               ],
               [

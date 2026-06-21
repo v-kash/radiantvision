@@ -32,7 +32,7 @@ const workflowSteps = [
     description:
       "Our engineers develop efficient MEPFP systems tailored to your project's unique operational and performance needs.",
     details: [
-      "HVAC, electrical, plumbing, and fire protection design",
+      "Mechanical, Electrical, Plumbing, and Fire Protection Design",
       "Engineering analysis and load calculations",
       "Equipment selection and system optimization",
     ],
@@ -69,7 +69,6 @@ const workflowSteps = [
       "Comprehensive internal reviews",
       "Cross-disciplinary design verification",
       "Client feedback integration and refinements",
-      "Permit and authority submission support",
     ],
     image: "/workflow/validate.jpeg",
     color: "from-orange-500 to-amber-500",

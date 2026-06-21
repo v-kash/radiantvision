@@ -55,7 +55,7 @@ export default function WhatDrivesUs() {
           viewport={{ once: true }}
           className="text-[#a0a89a] text-sm leading-relaxed max-w-sm md:text-right"
         >
-          We believe great engineering is not just about calculations — it's
+          We believe great engineering is not just about calculations it's
           about clarity, coordination, and responsibility.
         </motion.p>
       </div>

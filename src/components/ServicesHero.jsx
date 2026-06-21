@@ -15,7 +15,7 @@ export default function ServicesHero() {
       <div
         className="absolute inset-0 bg-cover bg-center"
         style={{
-          backgroundImage: "url('/hero2.jpeg')", // replace with your image
+          backgroundImage: "url('/hero2.jpg')", // replace with your image
         }}
       />
 

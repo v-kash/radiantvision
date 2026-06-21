@@ -92,13 +92,13 @@ export default function Header() {
         </nav>
 
         {/* CTA */}
-        <Link
-          href="/contact"
-          className="header-cta border px-5 py-2 text-sm rounded-md transition border-current hover:bg-current hover:text-white"
-          style={{ opacity: 0 }}
-        >
-          Get in Touch
-        </Link>
+      <Link
+  href="/contact"
+  className="header-cta border px-5 py-2 text-sm rounded-md transition border-current hover:bg-[#5a7a4a] hover:text-white hover:border-[#5a7a4a]"
+  style={{ opacity: 0 }}
+>
+  Get in Touch
+</Link>
 
       </div>
     </header>

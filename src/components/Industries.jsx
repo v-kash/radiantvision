@@ -22,7 +22,7 @@ const industries = [
     subtitle: "High-Rise & Villas",
     image: "/industries/residential.jpg",
     description:
-      "efficient building services for apartments, villas, high-rise residences, and housing projects.",
+      "Efficient building services for apartments, villas, high-rise residences, and housing projects.",
     stats: "Apartments • Villas • High-Rise",
   },
   {
@@ -58,7 +58,7 @@ const industries = [
     subtitle: "Projects",
     image: "/industries/infrastructure.png",
     description:
-      "EPFP and BIM solutions for airports, transit facilities, and public infrastructure projects.",
+      "MEPFP and BIM solutions for airports, transit facilities, and public infrastructure projects.",
     stats: "Airports • Transit • Public Facilities",
   },
 ];
