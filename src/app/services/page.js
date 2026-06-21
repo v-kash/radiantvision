@@ -9,8 +9,8 @@ export default function Home() {
       <ServicesHero />
       <ServicesGrid />
       <MEPSection />
-<IndustriesSlider/>
-      <CTASection/>
+      <IndustriesSlider />
+      <CTASection />
     </>
   );
 }

@@ -6,7 +6,6 @@ import Header from "@/components/Header";
 export default function ProjectsHero() {
   return (
     <section className="relative h-[80vh] w-full overflow-hidden">
-
       {/* HEADER */}
       <div className="absolute top-0 left-0 w-full z-30">
         <Header />
@@ -25,7 +24,6 @@ export default function ProjectsHero() {
 
       {/* CONTENT */}
       <div className="relative z-20 h-full flex flex-col items-center justify-center text-center px-6">
-
         {/* SMALL TAG */}
         <motion.span
           initial={{ opacity: 0, y: 20 }}
@@ -59,32 +57,29 @@ export default function ProjectsHero() {
         </motion.p>
 
         {/* CTA BUTTONS */}
-       <motion.div
-  initial={{ opacity: 0, y: 40 }}
-  animate={{ opacity: 1, y: 0 }}
-  transition={{ delay: 0.4, duration: 0.8 }}
-  className="flex gap-4 flex-wrap justify-center"
->
-  {/* PRIMARY BUTTON */}
-  <button className="group relative px-8 py-3 rounded-[2px] overflow-hidden text-sm tracking-wide text-white font-medium transition-all duration-300">
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.4, duration: 0.8 }}
+          className="flex gap-4 flex-wrap justify-center"
+        >
+          {/* PRIMARY BUTTON */}
+          <button className="group relative px-8 py-3 rounded-[2px] overflow-hidden text-sm tracking-wide text-white font-medium transition-all duration-300">
+            {/* gradient background */}
+            <span className="absolute inset-0 bg-gradient-to-r from-[#4f6f52] to-[#739072] transition-all duration-300 group-hover:scale-105"></span>
 
-    {/* gradient background */}
-    <span className="absolute inset-0 bg-gradient-to-r from-[#4f6f52] to-[#739072] transition-all duration-300 group-hover:scale-105"></span>
+            {/* glow effect */}
+            <span className="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-300 bg-[#739072]/30 blur-xl"></span>
 
-    {/* glow effect */}
-    <span className="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-300 bg-[#739072]/30 blur-xl"></span>
+            {/* text */}
+            <span className="relative z-10">View Projects</span>
+          </button>
 
-    {/* text */}
-    <span className="relative z-10">
-      View Projects
-    </span>
-  </button>
-
-  {/* SECONDARY BUTTON */}
-  <button className="px-8 py-3 rounded-[2px] border border-white/30 text-white text-sm tracking-wide font-medium backdrop-blur-md hover:bg-white hover:text-black transition-all duration-300">
-    Request Consultation
-  </button>
-</motion.div>
+          {/* SECONDARY BUTTON */}
+          <button className="px-8 py-3 rounded-[2px] border border-white/30 text-white text-sm tracking-wide font-medium backdrop-blur-md hover:bg-white hover:text-black transition-all duration-300">
+            Request Consultation
+          </button>
+        </motion.div>
       </div>
     </section>
   );

@@ -1,32 +1,41 @@
 "use client";
 
 import Link from "next/link";
-import { Mail, Phone, MapPin, Linkedin, Instagram, Twitter } from "lucide-react";
+import {
+  Mail,
+  Phone,
+  MapPin,
+  Linkedin,
+  Instagram,
+  Twitter,
+} from "lucide-react";
 import { motion } from "framer-motion";
+
+const socials = [
+  { Icon: Linkedin, href: "https://www.linkedin.com/in/radiant-vision-b64859312?utm_source=share_via&utm_content=profile&utm_medium=member_android" },
+   { Icon: Instagram, href: "#", disabled: true },
+];
 
 export default function Footer() {
   return (
     <footer className="relative bg-[#f6f4ee] text-[#1a1f16] px-[8%] pt-16 pb-8 overflow-hidden">
-
       {/* SOFT RADIAL LIGHT */}
       <div className="absolute inset-0 flex justify-center pointer-events-none">
         <div className="w-[600px] h-[600px] bg-[#5a7a4a]/10 blur-[120px] rounded-full" />
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto">
-
         {/* GRID */}
         <div className="grid md:grid-cols-4 gap-16">
-
           {/* BRAND */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <h3 className="font-heading text-xl mb-4">MEPFE BIM</h3>
+            <h3 className="font-heading text-xl mb-4">MEPFPFE BIM</h3>
             <p className="text-[#6b705c] text-sm leading-relaxed max-w-xs">
-              Precision-driven MEP and BIM solutions designed for efficiency,
+              Precision-driven MEPFP and BIM solutions designed for efficiency,
               coordination, and long-term performance.
             </p>
           </motion.div>
@@ -42,18 +51,20 @@ export default function Footer() {
             </p>
 
             <div className="flex flex-col gap-4 text-sm">
-              {["Home", "Services", "Projects", "About", "Contact"].map((item) => (
-                <Link
-                  key={item}
-                  href="/"
-                  className="group relative w-fit text-[#6b705c] hover:text-[#1a1f16] transition"
-                >
-                  {item}
+              {["Home", "Services", "Projects", "About", "Contact"].map(
+                (item) => (
+                  <Link
+                    key={item}
+                    href="/"
+                    className="group relative w-fit text-[#6b705c] hover:text-[#1a1f16] transition"
+                  >
+                    {item}
 
-                  {/* premium underline */}
-                  <span className="absolute left-0 -bottom-1 w-full h-[1px] bg-[#5a7a4a] scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-300" />
-                </Link>
-              ))}
+                    {/* premium underline */}
+                    <span className="absolute left-0 -bottom-1 w-full h-[1px] bg-[#5a7a4a] scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-300" />
+                  </Link>
+                ),
+              )}
             </div>
           </motion.div>
 
@@ -68,22 +79,29 @@ export default function Footer() {
             </p>
 
             <div className="flex flex-col gap-5 text-sm text-[#6b705c]">
-
               <div className="flex items-center gap-3 group">
-                <Mail size={16} className="text-[#5a7a4a] group-hover:scale-110 transition" />
+                <Mail
+                  size={16}
+                  className="text-[#5a7a4a] group-hover:scale-110 transition"
+                />
                 hello@mepfebim.com
               </div>
 
               <div className="flex items-center gap-3 group">
-                <Phone size={16} className="text-[#5a7a4a] group-hover:scale-110 transition" />
-                +91 98765 43210
+                <Phone
+                  size={16}
+                  className="text-[#5a7a4a] group-hover:scale-110 transition"
+                />
+                +91 87348 31221
               </div>
 
               <div className="flex items-start gap-3 group">
-                <MapPin size={16} className="text-[#5a7a4a] mt-1 group-hover:scale-110 transition" />
+                <MapPin
+                  size={16}
+                  className="text-[#5a7a4a] mt-1 group-hover:scale-110 transition"
+                />
                 Ahmedabad, Gujarat, India
               </div>
-
             </div>
           </motion.div>
 
@@ -98,23 +116,21 @@ export default function Footer() {
             </p>
 
             <div className="flex gap-4">
-
-              {[Linkedin, Instagram, Twitter].map((Icon, i) => (
-                <a
-                  key={i}
-                  href="#"
-                  className="group relative w-11 h-11 flex items-center justify-center border border-[#5a7a4a]/20 rounded-sm overflow-hidden"
-                >
-                  {/* hover fill */}
-                  <span className="absolute inset-0 bg-[#5a7a4a] translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
-
-                  <Icon className="relative z-10 text-[#5a7a4a] group-hover:text-white transition" size={18} />
-                </a>
-              ))}
-
-            </div>
+  {socials.map(({ Icon, href, disabled }, i) => (
+    
+    <a  key={i}
+      href={href}
+      target={disabled ? undefined : "_blank"}
+      rel={disabled ? undefined : "noopener noreferrer"}
+      onClick={disabled ? (e) => e.preventDefault() : undefined}
+      className="group relative w-11 h-11 flex items-center justify-center border border-[#5a7a4a]/20 rounded-sm overflow-hidden"
+    >
+      <span className="absolute inset-0 bg-[#5a7a4a] translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
+      <Icon className="relative z-10 text-[#5a7a4a] group-hover:text-white transition" size={18} />
+    </a>
+  ))}
+</div>
           </motion.div>
-
         </div>
 
         {/* DIVIDER */}
@@ -122,16 +138,17 @@ export default function Footer() {
 
         {/* BOTTOM */}
         <div className="flex flex-col md:flex-row justify-between items-center text-sm text-[#6b705c] gap-4">
-
-          <p>© {new Date().getFullYear()} MEPFE BIM. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} MEPFPFE BIM. All rights reserved.</p>
 
           <div className="flex gap-6">
-            <Link href="#" className="hover:text-[#1a1f16] transition">Privacy</Link>
-            <Link href="#" className="hover:text-[#1a1f16] transition">Terms</Link>
+            <Link href="#" className="hover:text-[#1a1f16] transition">
+              Privacy
+            </Link>
+            <Link href="#" className="hover:text-[#1a1f16] transition">
+              Terms
+            </Link>
           </div>
-
         </div>
-
       </div>
     </footer>
   );

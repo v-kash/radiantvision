@@ -6,10 +6,8 @@ export default function OurStory() {
   return (
     <section className="py-16 px-[8%] bg-[#f8f4ef]">
       <div className="grid md:grid-cols-2 gap-12 items-center">
-
         {/* LEFT — text */}
         <div>
-
           {/* TAG */}
           <motion.p
             initial={{ opacity: 0, y: 10 }}
@@ -29,8 +27,7 @@ export default function OurStory() {
             viewport={{ once: true }}
             className="text-2xl md:text-3xl font-heading text-[#1a1a1a] leading-snug mb-6"
           >
-            Every building relies on systems
-            that are rarely seen — but{" "}
+            Every building relies on systems that are rarely seen — but{" "}
             <span className="text-[#5a7a4a]">critically important.</span>
           </motion.h2>
 
@@ -88,7 +85,6 @@ export default function OurStory() {
               </p>
             </div>
           </motion.div>
-
         </div>
 
         {/* RIGHT — image */}
@@ -99,7 +95,6 @@ export default function OurStory() {
           viewport={{ once: true }}
           className="relative"
         >
-
           {/* MAIN IMAGE — reduced height */}
           <div className="relative rounded-2xl overflow-hidden aspect-[3/4] w-full max-h-[420px]">
             <div
@@ -107,13 +102,7 @@ export default function OurStory() {
               style={{ backgroundImage: "url('/about-story.jpg')" }}
             />
           </div>
-
-         
-
-         
-
         </motion.div>
-
       </div>
     </section>
   );

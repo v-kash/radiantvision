@@ -6,7 +6,6 @@ import Header from "@/components/Header"; // adjust path if needed
 export default function ServicesHero() {
   return (
     <section className="relative h-[75vh] w-full overflow-hidden">
-
       {/* HEADER (overlay on hero) */}
       <div className="absolute top-0 left-0 w-full z-30">
         <Header />
@@ -25,7 +24,6 @@ export default function ServicesHero() {
 
       {/* CONTENT */}
       <div className="relative z-20 h-full flex flex-col items-center justify-center text-center px-6">
-
         <motion.h1
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}

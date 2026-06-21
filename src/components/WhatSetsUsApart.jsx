@@ -6,7 +6,7 @@ const points = [
   {
     number: "01",
     heading: "Coordination, Not Just Design",
-    text: "We focus on how every system interacts with the others — ensuring MEP, fire protection, and structural elements work together seamlessly from day one.",
+    text: "We focus on how every system interacts with the others — ensuring MEPFP, fire protection, and structural elements work together seamlessly from day one.",
   },
   {
     number: "02",
@@ -164,8 +164,6 @@ export default function WhatSetsUsApart() {
                     {point.text}
                   </p>
                 </div>
-
-                
               </div>
             </motion.div>
           ))}

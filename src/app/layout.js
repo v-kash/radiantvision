@@ -17,15 +17,13 @@ const cormorant = Cormorant_Garamond({
 
 export const metadata = {
   title: "Your Company Name",
-  description: "MEP Engineering & BIM Solutions",
+  description: "MEPFP Engineering & BIM Solutions",
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body
-        className={`${inter.variable} ${cormorant.variable} antialiased`}
-      >
+      <body className={`${inter.variable} ${cormorant.variable} antialiased`}>
         {children}
         <Footer />
       </body>

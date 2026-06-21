@@ -34,7 +34,6 @@ export default function ServicesGrid() {
   return (
     <section className="py-16 px-[8%] bg-[#f8f4ef]">
       <div className="max-w-7xl mx-auto">
-
         {/* HEADING */}
         <div className="text-center mb-16">
           <motion.p
@@ -62,7 +61,8 @@ export default function ServicesGrid() {
             viewport={{ once: true }}
             className="text-[#777] text-base max-w-xl mx-auto leading-relaxed"
           >
-            Comprehensive MEPFP and BIM solutions tailored for modern construction.
+            Comprehensive MEPFP and BIM solutions tailored for modern
+            construction.
           </motion.p>
         </div>
 
@@ -77,10 +77,8 @@ export default function ServicesGrid() {
               viewport={{ once: true }}
               className="group relative aspect-square overflow-hidden rounded-[2px] cursor-pointer border border-[#e0dbd4]"
             >
-
               {/* DEFAULT STATE — cream bg */}
               <div className="absolute inset-0 bg-[#f0ece5] flex flex-col justify-between p-6 transition-opacity duration-500 group-hover:opacity-0">
-
                 {/* Number */}
                 <span className="text-xs font-medium tracking-[0.2em] text-[#5a7a4a]/50 tabular-nums">
                   {String(i + 1).padStart(2, "0")}
@@ -97,7 +95,6 @@ export default function ServicesGrid() {
                     {service.desc}
                   </p>
                 </div>
-
               </div>
 
               {/* IMAGE — slides up from bottom on hover */}
@@ -111,7 +108,6 @@ export default function ServicesGrid() {
 
               {/* HOVER CONTENT */}
               <div className="absolute inset-0 flex flex-col justify-between p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10">
-
                 {/* Number */}
                 <span className="text-xs font-medium tracking-[0.2em] text-white/40 tabular-nums">
                   {String(i + 1).padStart(2, "0")}
@@ -126,15 +122,11 @@ export default function ServicesGrid() {
                   <p className="text-xs text-white/65 leading-relaxed mb-4">
                     {service.desc}
                   </p>
-                 
                 </div>
-
               </div>
-
             </motion.div>
           ))}
         </div>
-
       </div>
     </section>
   );

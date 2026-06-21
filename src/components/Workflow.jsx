@@ -49,7 +49,7 @@ const workflowSteps = [
     description:
       "Through BIM coordination, we align every discipline to minimize conflicts and improve construction efficiency.",
     details: [
-      "Revit MEP modeling and documentation",
+      "Revit MEPFP modeling and documentation",
       "Clash detection across all disciplines",
       "Coordinated drawings and specifications",
     ],
@@ -76,22 +76,23 @@ const workflowSteps = [
     accentColor: "orange-500",
   },
 
- {
-  id: 5,
-  number: "05",
-  title: "Deliver",
-  subtitle: "Documentation Excellence",
-  description:
-    "We provide comprehensive project documentation tailored to client requirements and industry standards, ensuring a smooth transition from design to execution.",
-  details: [
-    "Standardized documentation aligned with client requirements",
-    "Detailed schedules, specifications, and deliverables",
-    "Quality-checked final documentation for project handover",
-  ],
-  image: "/workflow/deliver.jpeg",
-  color: "from-green-500 to-emerald-500",
-  accentColor: "green-500",
-},]
+  {
+    id: 5,
+    number: "05",
+    title: "Deliver",
+    subtitle: "Documentation Excellence",
+    description:
+      "We provide comprehensive project documentation tailored to client requirements and industry standards, ensuring a smooth transition from design to execution.",
+    details: [
+      "Standardized documentation aligned with client requirements",
+      "Detailed schedules, specifications, and deliverables",
+      "Quality-checked final documentation for project handover",
+    ],
+    image: "/workflow/deliver.jpeg",
+    color: "from-green-500 to-emerald-500",
+    accentColor: "green-500",
+  },
+];
 
 export default function WorkflowTimeline() {
   const containerRef = useRef(null);
@@ -227,8 +228,6 @@ export default function WorkflowTimeline() {
           <h2 className="workflow-title text-4xl md:text-5xl lg:text-6xl font-light leading-[1.1] text-black tracking-tight mb-6">
             Our Workflow
           </h2>
-
-         
         </div>
 
         {/* Timeline Container */}
@@ -250,20 +249,14 @@ export default function WorkflowTimeline() {
               const isLeft = index % 2 === 0;
 
               return (
-                <div
-                  key={step.id}
-                  className="timeline-step relative"
-                >
+                <div key={step.id} className="timeline-step relative">
                   {/* Center Node */}
                   <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-20 hidden lg:block">
                     <div
                       className={`relative w-16 h-16 rounded-full border-4 border-[#588740] shadow-xl transition-all duration-500 ${
-                        activeStep >= index
-                          ? `bg-[#ffffff] `
-                          : "bg-[#ffffff] "
+                        activeStep >= index ? `bg-[#ffffff] ` : "bg-[#ffffff] "
                       }`}
                     >
-
                       {/* Number */}
                       <div className="relative flex items-center justify-center h-full text-[#588740] font-bold text-lg">
                         {step.number}
@@ -366,8 +359,6 @@ export default function WorkflowTimeline() {
                           </li>
                         ))}
                       </ul>
-
-                      
                     </div>
                   </div>
                 </div>
@@ -375,8 +366,6 @@ export default function WorkflowTimeline() {
             })}
           </div>
         </div>
-
-        
       </div>
     </section>
   );

@@ -38,7 +38,7 @@ const industries = [
     id: 4,
     title: "Educational",
     subtitle: "Institutions",
-    image: "/industries/datacenter.jpg",
+    image: "/industries/educational.png",
     description:
       "Reliable engineering solutions for schools, universities, training centers, and campuses.",
     stats: "Schools • Universities • Campuses",
@@ -47,7 +47,7 @@ const industries = [
     id: 5,
     title: "Industrial",
     subtitle: "& Manufacturing",
-    image: "/industries/industrial.jpg",
+    image: "/industries/industrial.png",
     description:
       "Specialized MEPFP and BIM services for manufacturing units, warehouses, and industrial buildings.",
     stats: "Factories • Warehouses • Production Units",
@@ -56,7 +56,7 @@ const industries = [
     id: 6,
     title: "Infrastructure",
     subtitle: "Projects",
-    image: "/industries/infrastructure.jpg",
+    image: "/industries/infrastructure.png",
     description:
       "EPFP and BIM solutions for airports, transit facilities, and public infrastructure projects.",
     stats: "Airports • Transit • Public Facilities",
@@ -226,7 +226,7 @@ export default function IndustriesSlider() {
 
           <p className="industry-intro text-lg text-[#7a7a7a] leading-relaxed max-w-2xl mx-auto">
             We partner with developers, consultants, and contractors across
-            diverse sectors to deliver reliable and scalable MEP and BIM
+            diverse sectors to deliver reliable and scalable MEPFP and BIM
             solutions.
           </p>
         </div>
@@ -268,7 +268,6 @@ export default function IndustriesSlider() {
                         <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#1a1f16]/20 to-[#1a1f16]/40 group-hover:via-black/50 transition-all duration-500" />
 
                         {/* Number Overlay - ALWAYS ON RIGHT */}
-                        
 
                         {/* Stats Badge - ALWAYS ON RIGHT */}
                       </div>

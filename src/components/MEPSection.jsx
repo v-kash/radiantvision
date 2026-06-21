@@ -13,7 +13,7 @@ const services = [
     key: "mep",
     title: "MEPFP Design",
     desc: "Efficient, sustainable, and code-compliant MEPFP system design.",
-    img: "https://images.unsplash.com/photo-1581094794329-c8112c4e5190?q=80&w=1600",
+    img: "/services/mepfp.png",
     scope: ["HVAC systems", "Electrical design", "Plumbing", "Fire systems"],
     deliverables: ["Drawings", "Load calculations", "BOQs"],
   },
@@ -21,15 +21,23 @@ const services = [
     key: "bim",
     title: "BIM Modeling",
     desc: "High-precision BIM models for visualization and planning.",
-    img: "https://images.unsplash.com/photo-1558655146-d09347e92766?q=80&w=1600",
-    scope: ["3D modeling", "Multi-Discipline BIM Coordination", "Document Support"],
-    deliverables: ["LOD Complinant Revit Models", "Drawings & Installation Layouts", "BOQ/ Quantity Schedules"],
+    img: "/services/bim.png",
+    scope: [
+      "3D modeling",
+      "Multi-Discipline BIM Coordination",
+      "Document Support",
+    ],
+    deliverables: [
+      "LOD Complinant Revit Models",
+      "Drawings & Installation Layouts",
+      "BOQ/ Quantity Schedules",
+    ],
   },
   {
     key: "coord",
     title: "BIM Coordination",
     desc: "Clash-free coordination across all disciplines.",
-    img: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=1600",
+    img: "/services/bimc.png",
     scope: ["Clash detection", "Coordination", "Model validation"],
     deliverables: ["Reports", "Coordinated models"],
   },
@@ -37,7 +45,7 @@ const services = [
     key: "support",
     title: "Design Support",
     desc: "Technical guidance to address design-related challenges during construction.",
-    img: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=1600",
+    img: "/services/support.png",
     scope: ["RFI handling", "Design Issue Resolution", "Technical Assistance"],
     deliverables: ["Reports", "Updated drawings"],
   },
@@ -45,9 +53,17 @@ const services = [
     key: "fm",
     title: "Lighting Design",
     desc: "Optimized lighting solutions through simulation and analysis.",
-    img: "https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=1600",
-    scope: ["Illumination Calculation", "Lighting Simulation", "Fixture Selection"],
-    deliverables: ["Lighting Layouts", "Illumination Reports", "Fixture Schedules"],
+    img: "/services/light.png",
+    scope: [
+      "Illumination Calculation",
+      "Lighting Simulation",
+      "Fixture Selection",
+    ],
+    deliverables: [
+      "Lighting Layouts",
+      "Illumination Reports",
+      "Fixture Schedules",
+    ],
   },
 ];
 
@@ -90,7 +106,6 @@ export default function ServicesTabs() {
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
     >
-
       {/* HEADING */}
       <div className="text-center mb-14">
         <motion.p
@@ -111,7 +126,6 @@ export default function ServicesTabs() {
         >
           Our Expertise
         </motion.h2>
-       
       </div>
 
       {/* TABS */}
@@ -123,10 +137,12 @@ export default function ServicesTabs() {
             className="relative px-5 py-2 text-sm tracking-wide transition-colors duration-300 rounded-[2px]"
             style={{
               color: activeIndex === i ? "#1a1f16" : "rgba(255,255,255,0.45)",
-              background: activeIndex === i ? "#c8d5b9" : "rgba(255,255,255,0.05)",
-              border: activeIndex === i
-                ? "1px solid transparent"
-                : "1px solid rgba(255,255,255,0.08)",
+              background:
+                activeIndex === i ? "#c8d5b9" : "rgba(255,255,255,0.05)",
+              border:
+                activeIndex === i
+                  ? "1px solid transparent"
+                  : "1px solid rgba(255,255,255,0.08)",
             }}
           >
             {service.title}
@@ -147,7 +163,6 @@ export default function ServicesTabs() {
 
       {/* MAIN CONTENT */}
       <div className="grid md:grid-cols-2 gap-16 items-center">
-
         {/* LEFT — parallax image */}
         <div
           ref={ref}
@@ -165,7 +180,8 @@ export default function ServicesTabs() {
           <div
             className="absolute inset-0 pointer-events-none"
             style={{
-              background: "radial-gradient(circle at 30% 70%, rgba(90,122,74,0.18) 0%, transparent 60%)",
+              background:
+                "radial-gradient(circle at 30% 70%, rgba(90,122,74,0.18) 0%, transparent 60%)",
             }}
           />
 
@@ -190,7 +206,6 @@ export default function ServicesTabs() {
           </div>
 
           {/* Floating index badge */}
-          
         </div>
 
         {/* RIGHT — service detail */}
@@ -204,10 +219,10 @@ export default function ServicesTabs() {
               transition={{ duration: 0.45 }}
               className="w-full"
             >
-
               {/* Tag */}
               <p className="text-xs tracking-[0.2em] uppercase text-[#5a7a4a] mb-4">
-                {String(activeIndex + 1).padStart(2, "0")} / {String(services.length).padStart(2, "0")}
+                {String(activeIndex + 1).padStart(2, "0")} /{" "}
+                {String(services.length).padStart(2, "0")}
               </p>
 
               {/* Title */}
@@ -228,7 +243,10 @@ export default function ServicesTabs() {
                   </p>
                   <ul className="space-y-2">
                     {active.scope.map((item, i) => (
-                      <li key={i} className="flex items-center gap-2 text-sm text-white/65">
+                      <li
+                        key={i}
+                        className="flex items-center gap-2 text-sm text-white/65"
+                      >
                         <span className="w-1 h-1 rounded-full bg-[#5a7a4a] shrink-0" />
                         {item}
                       </li>
@@ -241,7 +259,10 @@ export default function ServicesTabs() {
                   </p>
                   <ul className="space-y-2">
                     {active.deliverables.map((item, i) => (
-                      <li key={i} className="flex items-center gap-2 text-sm text-white/65">
+                      <li
+                        key={i}
+                        className="flex items-center gap-2 text-sm text-white/65"
+                      >
                         <span className="w-1 h-1 rounded-full bg-[#5a7a4a] shrink-0" />
                         {item}
                       </li>
@@ -255,13 +276,13 @@ export default function ServicesTabs() {
                 <span className="absolute inset-0 bg-gradient-to-r from-[#4f6f52] to-[#739072] transition-transform duration-300 group-hover:scale-105" />
                 <span className="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-300 bg-[#739072]/30 blur-xl" />
                 <span className="relative z-10">Learn More</span>
-                <span className="relative z-10 w-5 h-5 rounded-full bg-white/20 flex items-center justify-center text-xs group-hover:translate-x-0.5 transition-transform">→</span>
+                <span className="relative z-10 w-5 h-5 rounded-full bg-white/20 flex items-center justify-center text-xs group-hover:translate-x-0.5 transition-transform">
+                  →
+                </span>
               </button>
-
             </motion.div>
           </AnimatePresence>
         </div>
-
       </div>
 
       {/* BOTTOM PROGRESS DOTS */}
@@ -275,12 +296,12 @@ export default function ServicesTabs() {
               width: i === activeIndex ? 28 : 8,
               height: 3,
               borderRadius: 999,
-              background: i === activeIndex ? "#c8d5b9" : "rgba(255,255,255,0.15)",
+              background:
+                i === activeIndex ? "#c8d5b9" : "rgba(255,255,255,0.15)",
             }}
           />
         ))}
       </div>
-
     </section>
   );
 }

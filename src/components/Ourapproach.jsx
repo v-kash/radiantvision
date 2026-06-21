@@ -1,7 +1,12 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
-import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion";
+import {
+  motion,
+  useScroll,
+  useTransform,
+  AnimatePresence,
+} from "framer-motion";
 
 const steps = [
   {
@@ -62,7 +67,6 @@ export default function ProcessSection() {
       className="relative bg-[#f8f4ef]"
     >
       <div className="sticky top-0 h-screen flex flex-col justify-center px-[8%] overflow-hidden">
-
         {/* HEADING */}
         <div className="text-center mb-20">
           <p className="text-sm tracking-[0.2em] uppercase text-[#5a7a4a] mb-3">
@@ -72,13 +76,13 @@ export default function ProcessSection() {
             Our Engineering Process
           </h2>
           <p className="max-w-xl mx-auto text-[#777] text-base">
-            Scroll to walk through how we take every project from idea to handover.
+            Scroll to walk through how we take every project from idea to
+            handover.
           </p>
         </div>
 
         {/* PROGRESS TRACK */}
         <div className="relative mb-8">
-
           {/* Background track */}
           <div className="h-[2px] w-full bg-[#d6d2cc] rounded-full" />
 
@@ -92,7 +96,6 @@ export default function ProcessSection() {
           <div className="absolute top-1/2 left-0 w-full flex justify-between -translate-y-1/2">
             {steps.map((_, i) => (
               <div key={i} className="flex flex-col items-center gap-3">
-
                 {/* Number above dot */}
                 <motion.span
                   animate={{
@@ -127,7 +130,6 @@ export default function ProcessSection() {
                 >
                   Active
                 </motion.span>
-
               </div>
             ))}
           </div>
@@ -135,7 +137,6 @@ export default function ProcessSection() {
 
         {/* MAIN CONTENT */}
         <div className="grid md:grid-cols-2 gap-16 items-center mt-6">
-
           {/* LEFT — step text */}
           <div>
             <motion.p
@@ -186,7 +187,6 @@ export default function ProcessSection() {
 
           {/* RIGHT — fading image */}
           <div className="relative h-72 md:h-80 rounded-2xl overflow-hidden">
-
             {/* Ghost big number watermark */}
             <div className="absolute inset-0 flex items-center justify-center z-10 pointer-events-none select-none">
               <AnimatePresence mode="wait">
@@ -238,7 +238,6 @@ export default function ProcessSection() {
                 </p>
               </motion.div>
             </AnimatePresence>
-
           </div>
         </div>
 
@@ -248,14 +247,15 @@ export default function ProcessSection() {
           transition={{ duration: 0.4 }}
           className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 pointer-events-none"
         >
-          <span className="text-xs tracking-[0.2em] uppercase text-[#aaa]">Scroll</span>
+          <span className="text-xs tracking-[0.2em] uppercase text-[#aaa]">
+            Scroll
+          </span>
           <motion.div
             animate={{ y: [0, 6, 0] }}
             transition={{ repeat: Infinity, duration: 1.2 }}
             className="w-[1px] h-6 bg-[#aaa]"
           />
         </motion.div>
-
       </div>
     </section>
   );
