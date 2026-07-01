@@ -30,13 +30,13 @@ export default function Footer() {
 
           {/* BRAND */}
           <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
-            <Link href="/" className="inline-block mb-4">
+            <Link href="/" className="inline-block mb-4 px-10">
               <Image
-                src="/LOGO.png"
+                src="/LOGO.svg"
                 alt="MEPFE BIM"
                 width={120}
                 height={40}
-                className="h-10 w-auto object-contain"
+                className="h-10 w-auto object-contain scale-[3]"
               />
             </Link>
             <p className="text-[#6b705c] text-sm leading-relaxed max-w-xs">

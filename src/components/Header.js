@@ -61,11 +61,11 @@ export default function Header() {
       ref={(el) => { headerRef.current = el; headerEl.current = el; }}
       className="fixed top-0 left-0 w-full z-50 transition-colors duration-300 bg-transparent text-white"
     >
-      <div className="mx-auto max-w-7xl px-6 py-4 flex items-center justify-between">
+      <div className="mx-auto max-w-7xl px-17 py-4 flex items-center justify-between">
 
         {/* LOGO */}
         <Link href="/" className="header-logo flex items-center" style={{ opacity: 0 }}>
-          <Image src="/LOGO.png" alt="MEPFE BIM" width={120} height={40} className="h-10 w-auto object-contain" priority />
+          <Image src="/LOGO.svg" alt="MEPFE BIM" width={120} height={40} className="h-10 w-auto object-contain scale-[3]" priority  />
         </Link>
 
         {/* NAVIGATION */}
