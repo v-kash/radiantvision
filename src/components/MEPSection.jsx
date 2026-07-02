@@ -272,14 +272,14 @@ export default function ServicesTabs() {
               </div>
 
               {/* CTA */}
-              <button className="group relative inline-flex items-center gap-3 overflow-hidden rounded-[2px] px-7 py-3 text-sm tracking-wide text-white font-medium">
+              {/* <button className="group relative inline-flex items-center gap-3 overflow-hidden rounded-[2px] px-7 py-3 text-sm tracking-wide text-white font-medium">
                 <span className="absolute inset-0 bg-gradient-to-r from-[#4f6f52] to-[#739072] transition-transform duration-300 group-hover:scale-105" />
                 <span className="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-300 bg-[#739072]/30 blur-xl" />
                 <span className="relative z-10">Learn More</span>
                 <span className="relative z-10 w-5 h-5 rounded-full bg-white/20 flex items-center justify-center text-xs group-hover:translate-x-0.5 transition-transform">
                   →
                 </span>
-              </button>
+              </button> */}
             </motion.div>
           </AnimatePresence>
         </div>

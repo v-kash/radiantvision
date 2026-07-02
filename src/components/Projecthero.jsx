@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Header from "@/components/Header";
+import Link from "next/link";
 
 export default function ProjectsHero() {
   return (
@@ -64,21 +65,20 @@ export default function ProjectsHero() {
           className="flex gap-4 flex-wrap justify-center"
         >
           {/* PRIMARY BUTTON */}
+          <Link href="/contact">
           <button className="group relative px-8 py-3 rounded-[2px] overflow-hidden text-sm tracking-wide text-white font-medium transition-all duration-300">
-            {/* gradient background */}
             <span className="absolute inset-0 bg-gradient-to-r from-[#4f6f52] to-[#739072] transition-all duration-300 group-hover:scale-105"></span>
 
-            {/* glow effect */}
             <span className="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-300 bg-[#739072]/30 blur-xl"></span>
 
-            {/* text */}
-            <span className="relative z-10">View Projects</span>
+            <span className="relative z-10"> Request Consultation </span>
           </button>
+          </Link>
 
           {/* SECONDARY BUTTON */}
-          <button className="px-8 py-3 rounded-[2px] border border-white/30 text-white text-sm tracking-wide font-medium backdrop-blur-md hover:bg-white hover:text-black transition-all duration-300">
+          {/* <button className="px-8 py-3 rounded-[2px] border border-white/30 text-white text-sm tracking-wide font-medium backdrop-blur-md hover:bg-white hover:text-black transition-all duration-300">
             Request Consultation
-          </button>
+          </button> */}
         </motion.div>
       </div>
     </section>

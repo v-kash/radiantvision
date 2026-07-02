@@ -20,34 +20,38 @@ export default function OurStory() {
           </motion.p>
 
           {/* HEADING */}
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            viewport={{ once: true }}
-            className="text-2xl md:text-3xl font-heading text-[#1a1a1a] leading-snug mb-6"
-          >
-            Every building relies on systems that are rarely seen — but{" "}
-            <span className="text-[#5a7a4a]">critically important.</span>
-          </motion.h2>
+         <motion.h2
+  initial={{ opacity: 0, y: 20 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.6, delay: 0.1 }}
+  viewport={{ once: true }}
+  className="text-2xl md:text-3xl font-heading text-[#1a1a1a] leading-snug mb-6"
+>
+  Every remarkable journey begins with a dream one driven by{" "}
+  <span className="text-[#5a7a4a]">
+    passion, perseverance, and continuous learning.
+  </span>
+</motion.h2>
 
           {/* BODY PARAGRAPHS */}
           {[
-            "We started with a simple belief: engineering should not just meet standards, it should elevate how buildings perform.",
-            "From early-stage design to final execution, we focus on creating MEPFP systems that are not only efficient but also practical, coordinated, and future-ready.",
-            "Over time, we have worked across a wide range of projects, continuously refining our process to deliver better accuracy, smoother coordination, and stronger outcomes for our clients.",
-          ].map((para, i) => (
-            <motion.p
-              key={i}
-              initial={{ opacity: 0, y: 16 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.55, delay: 0.15 + i * 0.08 }}
-              viewport={{ once: true }}
-              className="text-[#666] text-sm leading-relaxed mb-3 last:mb-0"
-            >
-              {para}
-            </motion.p>
-          ))}
+  "RadiantVision was founded on the belief that dedication and continuous learning can transform ideas into reality. What began as a journey of learning MEPFP design gradually evolved into a vision of creating safer, smarter, and more efficient buildings through engineering excellence.",
+  
+  "That vision became the foundation of RadiantVision. Built on technical expertise, integrity, innovation, and strong client relationships, the company officially began its journey on June 1, 2025. In the early days, countless discussions, planning sessions, and shared ideas helped shape the company's identity and long term goals.",
+  
+  "One of the first milestones was establishing RadiantVision's professional presence by sharing engineering knowledge and insights with the industry. Soon after, the company earned its first commercial project on June 26, 2025, turning a dream into reality. Today, RadiantVision continues to grow with the same commitment to quality, delivering reliable MEPFP design solutions while building lasting partnerships. Our journey is still unfolding, and every project becomes a new chapter in our story.",
+].map((para, i) => (
+  <motion.p
+    key={i}
+    initial={{ opacity: 0, y: 16 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.55, delay: 0.15 + i * 0.08 }}
+    viewport={{ once: true }}
+    className="text-[#666] text-sm leading-relaxed mb-3 last:mb-0"
+  >
+    {para}
+  </motion.p>
+))}
 
           {/* DIVIDER */}
           <motion.div
@@ -60,31 +64,33 @@ export default function OurStory() {
 
           {/* FOUNDER SIGNATURE */}
           <motion.div
-            initial={{ opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.45 }}
-            viewport={{ once: true }}
-            className="flex items-center gap-3"
-          >
-            <div className="w-9 h-9 rounded-full bg-[#dde8d5] border border-[#c8d5b9] flex items-center justify-center text-[#5a7a4a] text-xs font-heading font-semibold shrink-0">
-              KS
-            </div>
-            <div>
-              <p
-                className="text-[#1a1a1a] leading-none mb-0.5"
-                style={{
-                  fontFamily: "Georgia, serif",
-                  fontSize: "18px",
-                  fontStyle: "italic",
-                }}
-              >
-                Keyur Shah
-              </p>
-              <p className="text-[10px] tracking-[0.15em] uppercase text-[#999]">
-                Founder & Lead Engineer
-              </p>
-            </div>
-          </motion.div>
+  initial={{ opacity: 0, y: 10 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.5, delay: 0.45 }}
+  viewport={{ once: true }}
+  className="flex items-center gap-3"
+>
+  <div className="w-9 h-9 rounded-full bg-[#dde8d5] border border-[#c8d5b9] flex items-center justify-center text-[#5a7a4a] text-xs font-heading font-semibold shrink-0">
+    RV
+  </div>
+
+  <div>
+    <p
+      className="text-[#1a1a1a] leading-none mb-0.5"
+      style={{
+        fontFamily: "Georgia, serif",
+        fontSize: "18px",
+        fontStyle: "italic",
+      }}
+    >
+      RadiantVision
+    </p>
+
+    <p className="text-[10px] tracking-[0.15em] uppercase text-[#999]">
+      Engineering the Future, Designing with Purpose
+    </p>
+  </div>
+</motion.div>
         </div>
 
         {/* RIGHT — image */}

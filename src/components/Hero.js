@@ -143,14 +143,14 @@ export default function Hero() {
 
             <div className="mt-8 flex gap-4">
               <a
-                href="#services"
+                href="/services"
                 className="btn-anim bg-[#5a7a4a] text-white px-6 py-3 text-sm rounded-md hover:bg-[#4a693d] transition"
               >
                 View Our Capabilities
               </a>
 
               <a
-                href="#contact"
+                href="/contact"
                 className="btn-anim border border-white/40 px-6 py-3 text-sm rounded-md hover:bg-white/10 transition"
               >
                 Contact Our Team

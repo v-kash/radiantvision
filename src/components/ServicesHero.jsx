@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import Header from "@/components/Header"; // adjust path if needed
-
+import Link from "next/link";
 export default function ServicesHero() {
   return (
     <section className="relative h-[75vh] w-full overflow-hidden">
@@ -43,7 +43,7 @@ export default function ServicesHero() {
           streamline design, coordination, and construction workflows.
         </motion.p>
 
-        {/* CTA */}
+        <Link href="/contact">
         <motion.button
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
@@ -52,6 +52,7 @@ export default function ServicesHero() {
         >
           Request a Consultation
         </motion.button>
+</Link>
       </div>
     </section>
   );

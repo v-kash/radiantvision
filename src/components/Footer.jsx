@@ -72,7 +72,7 @@ export default function Footer() {
               </div>
               <div className="flex items-center gap-3 group">
                 <Phone size={16} className="text-[#5a7a4a] group-hover:scale-110 transition" />
-                +91 87348 31221 · +91 99786 99284
+                +91 87348 31221 <br/> +91 99786 99284
               </div>
               <div className="flex items-start gap-3 group">
                 <MapPin size={16} className="text-[#5a7a4a] mt-1 group-hover:scale-110 transition shrink-0" />

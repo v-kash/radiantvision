@@ -86,6 +86,11 @@ const whyPoints = [
 ];
 
 export default function ContactPage() {
+  const [errors, setErrors] = useState({});
+const [loading, setLoading] = useState(false);
+
+const [success, setSuccess] = useState("");
+const [serverError, setServerError] = useState("");
   const [form, setForm] = useState({
     name: "",
     email: "",
@@ -93,6 +98,89 @@ export default function ContactPage() {
     projectType: "",
     message: "",
   });
+
+const validate = () => {
+  const newErrors = {};
+
+  if (!form.name.trim()) {
+    newErrors.name = "Full name is required";
+  } else if (form.name.trim().length < 3) {
+    newErrors.name = "Enter a valid name";
+  }
+
+  if (!form.email.trim()) {
+    newErrors.email = "Email is required";
+  } else if (
+    !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(form.email)
+  ) {
+    newErrors.email = "Invalid email address";
+  }
+
+  if (!form.phone.trim()) {
+    newErrors.phone = "Phone number is required";
+  } else if (!/^[6-9]\d{9}$/.test(form.phone)) {
+    newErrors.phone = "Enter valid 10 digit mobile number";
+  }
+
+  if (!form.projectType) {
+    newErrors.projectType = "Select project type";
+  }
+
+  if (!form.message.trim()) {
+    newErrors.message = "Message is required";
+  } else if (form.message.trim().length < 20) {
+    newErrors.message =
+      "Message should contain at least 20 characters";
+  }
+
+  setErrors(newErrors);
+
+  return Object.keys(newErrors).length === 0;
+};
+
+
+const handleSubmit = async (e) => {
+  e.preventDefault();
+
+  setSuccess("");
+  setServerError("");
+
+  if (!validate()) return;
+
+  try {
+    setLoading(true);
+
+    const res = await fetch("/api/contact", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(form),
+    });
+
+    const data = await res.json();
+
+    if (!res.ok) throw new Error(data.message);
+
+    setSuccess(
+      "Thank you! Your message has been sent successfully."
+    );
+
+    setForm({
+      name: "",
+      email: "",
+      phone: "",
+      projectType: "",
+      message: "",
+    });
+  } catch (err) {
+    setServerError(
+      err.message || "Something went wrong."
+    );
+  } finally {
+    setLoading(false);
+  }
+};
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -147,21 +235,7 @@ export default function ContactPage() {
             Have a project in mind or need expert MEPFP solutions? Get in touch we're here to help.
           </motion.p>
 
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.4, duration: 0.8 }}
-            className="flex gap-4 flex-wrap justify-center"
-          >
-            <button className="group relative px-8 py-3 rounded-[2px] overflow-hidden text-sm tracking-wide text-white font-medium">
-              <span className="absolute inset-0 bg-gradient-to-r from-[#4f6f52] to-[#739072] transition-all duration-300 group-hover:scale-105" />
-              <span className="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-300 bg-[#739072]/30 blur-xl" />
-              <span className="relative z-10">Get in Touch</span>
-            </button>
-            <button className="px-8 py-3 rounded-[2px] border border-white/30 text-white text-sm tracking-wide font-medium backdrop-blur-md hover:bg-white hover:text-black transition-all duration-300">
-              View Projects
-            </button>
-          </motion.div>
+          
         </div>
       </section>
 
@@ -312,7 +386,7 @@ export default function ContactPage() {
               Send Us a Message
             </h3>
 
-            <form className="flex flex-col gap-8">
+          <form onSubmit={handleSubmit} className="flex flex-col gap-8">
               <div className="grid grid-cols-2 gap-6">
                 <div>
                   <label className="text-[10px] tracking-[0.15em] uppercase text-[#aaa] block mb-2">
@@ -338,6 +412,12 @@ export default function ContactPage() {
                     placeholder="john@email.com"
                     className={inputClass}
                   />
+
+                  {errors.name && (
+<p className="mt-2 text-sm text-red-500">
+    {errors.name}
+</p>
+)}
                 </div>
               </div>
 
@@ -353,6 +433,11 @@ export default function ContactPage() {
                     placeholder="+91 XXXXX XXXXX"
                     className={inputClass}
                   />
+                  {errors.name && (
+<p className="mt-2 text-sm text-red-500">
+    {errors.name}
+</p>
+)}
                 </div>
                 <div>
                   <label className="text-[10px] tracking-[0.15em] uppercase text-[#aaa] block mb-2">
@@ -372,6 +457,11 @@ export default function ContactPage() {
                     <option value="industrial">Industrial</option>
                     <option value="healthcare">Healthcare</option>
                   </select>
+                  {errors.name && (
+<p className="mt-2 text-sm text-red-500">
+    {errors.name}
+</p>
+)}
                 </div>
               </div>
 
@@ -387,15 +477,37 @@ export default function ContactPage() {
                   placeholder="Tell us about your project..."
                   className={inputClass + " resize-none"}
                 />
+                {errors.name && (
+<p className="mt-2 text-sm text-red-500">
+    {errors.name}
+</p>
+)}
               </div>
+
+              {success && (
+<div className="rounded bg-green-50 border border-green-200 p-4 text-green-700">
+    {success}
+</div>
+)}
+
+{serverError && (
+<div className="rounded bg-red-50 border border-red-200 p-4 text-red-700">
+    {serverError}
+</div>
+)}
 
               <button
                 type="submit"
+                disabled={loading}
                 className="group relative self-start px-8 py-3.5 rounded-[2px] overflow-hidden text-sm tracking-wide text-white font-medium"
               >
+                
                 <span className="absolute inset-0 bg-gradient-to-r from-[#4f6f52] to-[#739072] transition-all duration-300 group-hover:scale-105" />
                 <span className="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-300 bg-[#739072]/30 blur-xl" />
-                <span className="relative z-10">Request Consultation</span>
+                <span className="relative z-10">{loading
+? "Sending..."
+: "Request Consultation"}
+</span>
               </button>
             </form>
           </motion.div>
@@ -502,7 +614,7 @@ export default function ContactPage() {
             className="flex gap-4 flex-wrap shrink-0"
           >
             <a
-              href="tel:+91XXXXXXXXXX"
+              href="tel:+918734831221"
               className="group relative inline-flex items-center gap-3 overflow-hidden rounded-[2px] px-7 py-3.5 text-sm tracking-wide text-white font-medium"
             >
               <span className="absolute inset-0 bg-gradient-to-r from-[#4f6f52] to-[#739072] transition-transform duration-300 group-hover:scale-105" />
@@ -511,7 +623,7 @@ export default function ContactPage() {
             </a>
 
             <a
-              href="mailto:info@yourcompany.com"
+              href="mailto:radiantvisionrdv1@gmail.com"
               className="inline-flex items-center gap-2 rounded-[2px] border border-white/20 px-7 py-3.5 text-sm tracking-wide text-white/70 hover:text-white hover:border-white/40 transition-all duration-300"
             >
               Email Us

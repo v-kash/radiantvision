@@ -175,7 +175,7 @@ export default function WhyUsSection() {
         >
           <Link
             href="/contact"
-            className="group inline-flex items-center gap-3 bg-[#5a7a4a] hover:bg-[#4a6a3a] text-white text-sm font-medium px-7 py-3.5 rounded-full transition-colors duration-300"
+            className="group inline-flex items-center gap-3 bg-[#5a7a4a] hover:bg-[#4a6a3a] text-white text-sm font-medium px-7 py-3.5 rounded-[2px] transition-colors duration-300"
           >
             Start a Project
             <span className="w-5 h-5 rounded-full bg-white/20 flex items-center justify-center text-xs group-hover:translate-x-0.5 transition-transform">
@@ -184,10 +184,10 @@ export default function WhyUsSection() {
           </Link>
 
           <Link
-            href="/projects"
+            href="/about"
             className="text-sm text-[#a0a89a] hover:text-white transition-colors duration-300 underline underline-offset-4"
           >
-            View our work
+            Know About Us
           </Link>
         </motion.div>
 

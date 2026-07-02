@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-
+import Link from "next/link";
 gsap.registerPlugin(ScrollTrigger);
 
 const industries = [
@@ -292,24 +292,26 @@ export default function IndustriesSlider() {
                           </p>
 
                           {/* Learn More Link */}
-                          <div className="flex items-center gap-2 text-[#6b705c] group-hover:text-black transition-colors duration-300">
-                            <span className="text-sm font-medium uppercase tracking-wider">
-                              Explore Projects
-                            </span>
-                            <svg
-                              className="w-5 h-5 transform group-hover:translate-x-2 transition-transform duration-300"
-                              fill="none"
-                              viewBox="0 0 24 24"
-                              stroke="currentColor"
-                            >
-                              <path
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                strokeWidth={2}
-                                d="M17 8l4 4m0 0l-4 4m4-4H3"
-                              />
-                            </svg>
-                          </div>
+                          {/* <Link href="/projects">
+                            <div className="flex items-center gap-2 text-[#6b705c] group-hover:text-black transition-colors duration-300 cursor-pointer">
+                              <span className="text-sm font-medium uppercase tracking-wider">
+                                Explore Projects
+                              </span>
+                              <svg
+                                className="w-5 h-5 transform group-hover:translate-x-2 transition-transform duration-300"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                stroke="currentColor"
+                              >
+                                <path
+                                  strokeLinecap="round"
+                                  strokeLinejoin="round"
+                                  strokeWidth={2}
+                                  d="M17 8l4 4m0 0l-4 4m4-4H3"
+                                />
+                              </svg>
+                            </div>
+                          </Link> */}
                         </div>
 
                         {/* Decorative Corner - ALWAYS TOP RIGHT, BLUE */}
@@ -331,7 +333,7 @@ export default function IndustriesSlider() {
           <button
             onClick={prevSlide}
             disabled={isAnimating}
-            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 md:-translate-x-16 z-20 bg-white border border-[#e0dbd4] text-black hover:bg-[#5a7a4a] hover:text-white w-12 h-12 md:w-14 md:h-14 rounded-full shadow-lg flex items-center justify-center transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed group"
+            className="absolute left-0 top-[45%] -translate-y-1/2 -translate-x-4 md:-translate-x-16 z-20 bg-white border border-[#e0dbd4] text-black hover:bg-[#5a7a4a] hover:text-white w-12 h-12 md:w-14 md:h-14 rounded-full shadow-lg flex items-center justify-center transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed group"
           >
             <svg
               className="w-6 h-6 transform group-hover:-translate-x-1 transition-transform duration-300"
@@ -351,7 +353,7 @@ export default function IndustriesSlider() {
           <button
             onClick={nextSlide}
             disabled={isAnimating}
-            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 md:translate-x-16 z-20 bg-white border border-[#e0dbd4] text-black hover:bg-[#5a7a4a] hover:text-white w-12 h-12 md:w-14 md:h-14 rounded-full shadow-lg flex items-center justify-center transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed group"
+            className="absolute right-0 top-[45%] -translate-y-1/2 translate-x-4 md:translate-x-16 z-20 bg-white border border-[#e0dbd4] text-black hover:bg-[#5a7a4a] hover:text-white w-12 h-12 md:w-14 md:h-14 rounded-full shadow-lg flex items-center justify-center transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed group"
           >
             <svg
               className="w-6 h-6 transform group-hover:translate-x-1 transition-transform duration-300"
