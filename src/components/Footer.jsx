@@ -88,6 +88,8 @@ export default function Footer() {
               {socials.map(({ Icon, href, disabled }, i) => (
                 
                 <a  key={i}
+
+                
                   href={href}
                   target={disabled ? undefined : "_blank"}
                   rel={disabled ? undefined : "noopener noreferrer"}
