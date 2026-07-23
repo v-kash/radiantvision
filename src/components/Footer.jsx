@@ -106,7 +106,7 @@ export default function Footer() {
         <div className="mt-12 mb-8 h-[1px] bg-[#5a7a4a]/20" />
 
         <div className="flex flex-col md:flex-row justify-between items-center text-sm text-[#6b705c] gap-4">
-          <p>© {new Date().getFullYear()} MEPFPFE BIM. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} Radient Vision. All rights reserved.</p>
           <div className="flex gap-6">
             <Link href="#" className="hover:text-[#1a1f16] transition">Privacy</Link>
             <Link href="#" className="hover:text-[#1a1f16] transition">Terms</Link>
