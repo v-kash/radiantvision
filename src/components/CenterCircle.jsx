@@ -127,7 +127,7 @@ export default function CenterCircle({ variant = "canvas" }) {
         {/* center wordmark */}
         <text
           x={C}
-          y={C - 26}
+          y={C}
           textAnchor="middle"
           fontFamily="Georgia, 'Times New Roman', serif"
           fontSize={28}
@@ -137,7 +137,7 @@ export default function CenterCircle({ variant = "canvas" }) {
           MEPFP
         </text>
 
-        <line
+        {/* <line
           x1={C - 34}
           y1={C - 2}
           x2={C - 14}
@@ -183,10 +183,10 @@ export default function CenterCircle({ variant = "canvas" }) {
           y2={C + 48}
           stroke="#C9C9BC"
           strokeWidth={1}
-        />
+        /> */}
         <text
           x={C}
-          y={C + 66}
+          y={C + 24}
           textAnchor="middle"
           fontFamily="ui-sans-serif, system-ui, sans-serif"
           fontSize={11}
